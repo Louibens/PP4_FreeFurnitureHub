@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'cloudinary',
 
     # Apps
-    'home'
+    'home',
+    'furniture',
 ]
 
 MIDDLEWARE = [
