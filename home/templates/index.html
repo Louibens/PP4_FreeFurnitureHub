@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container flex-column pt-3">
+    <section class="text-center">
+        <h1 class="main-title mx-auto">Welcome to the Free Furniture Hub: </h1>
+            <h2>Where Giving Furniture a New Home is a Breeze!</h2>
+        <p class="pt-2">
+            Hey there, furniture enthusiasts, and eco-warriors alike! 
+            <br>
+            Are you tired of seeing perfectly good furniture pieces being discarded and ending up in landfills? 
+            <br>
+            Do you believe in the power of giving back to the community while making a positive impact on the environment? 
+            <br>
+            <strong>If your answer is a resounding "Yes!", then you've come to the right place!</strong>
+            <hr>
+            At the Free Furniture Hub, we're all about fostering a sense of community while championing sustainability. Our mission is simple yet powerful: to provide a platform where you can easily post pictures and details of furniture items you wish to give away to those in need. It's time to bid farewell to the era of needless waste and embrace the joy of sharing and reusing!
+            <hr>
+
+        </p>
+        
+    </section>
+    <section>
+        <div class="text-center"><h2>Recently Posted</h2></div>
+        <div class="container d-flex flex-row flex-wrap justify-content-center">
+            {% for furniture in furniture_items %}
+            <a href="#" class="img-container">
+                <img src="{{furniture.image.url}}" alt="{{furniture.image_alt}}">
+                <div class="centered">
+                    <h2>{{furniture.title}}</h2>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+
+
+{% endblock %}

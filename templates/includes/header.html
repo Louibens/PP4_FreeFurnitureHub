@@ -1,0 +1,64 @@
+{% load static %}
+
+<header>
+  {% with request.resolver_match.url_name as url_name %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <div class="logos">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="https://res.cloudinary.com/doo82qk9r/image/upload/v1690644356/ffh_logo_iikuvd.png" alt="Free Furniture Logo" class="logo">
+          
+        </a>
+        <h1 class="tffh_logo">The 
+          <br><strong>Free Furniture</strong> 
+          <br>Hub
+        </h1>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navigation Items -->
+      <div class="collapse navbar-collapse nav-items-display" id="navbarNav">
+        <div class="container-fluid me-auto nav-cont">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">How it works</a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link " href="#">Create post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+            
+        </div>
+          <!-- Form for search box -->
+          <div class="container-fluid me-auto nav-cont">
+          <form class="d-flex s-box" role="search" method="GET" action="#">
+          <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary " type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+ 
+    </div> 
+  </nav>
+  {% endwith %}
+</header>
