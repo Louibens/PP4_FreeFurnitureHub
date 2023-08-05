@@ -1,4 +1,4 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 
 from django.shortcuts import render, get_object_or_404
 
@@ -20,3 +20,11 @@ class AddFurniture(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddFurniture, self).form_valid(form)
+
+
+class FurnitureItems(ListView):
+    """View all furniture items"""
+
+    template_name = "furniture_items.html"
+    model = Furniture
+    context_object_name = "furniture_items"
