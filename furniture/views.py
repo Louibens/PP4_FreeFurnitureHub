@@ -70,7 +70,5 @@ class FurnitureDetail(DetailView):
                 "furniture_post": furniture_post,
                 "comments": comments,
                 "comment_form": CommentForm()
-
-
             },
         )

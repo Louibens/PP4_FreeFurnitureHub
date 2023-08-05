@@ -107,7 +107,7 @@ class Furniture(models.Model):
 
 class Comment(models.Model):
     
-    furniture_post = models.ForeignKey(Furniture, on_delete=models.CASCADE, related_name='comments')
+    furniture_post = models.ForeignKey(Furniture, on_delete=models.CASCADE, related_name='comments', null=True)
     name = models.CharField(max_length=80)
     message = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
