@@ -1,6 +1,6 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
-from .models import Furniture
+from .models import Furniture, Comment
 
 
 class FurnitureForm(forms.ModelForm):
@@ -39,4 +39,7 @@ class FurnitureForm(forms.ModelForm):
         }
 
 
-
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('message',)

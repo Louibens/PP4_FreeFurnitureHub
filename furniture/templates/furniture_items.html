@@ -10,7 +10,7 @@
 <div class="container d-flex flex-row flex-wrap justify-content-center">
 
     {% for furniture in furniture_items %}
-    <a href="#" class="furniture" aria-label="Click to view {{furniture.title}}">
+    <a href="{% url 'furniture_detail' furniture.id %}" class="furniture" aria-label="Click to view {{furniture.title}}">
         <div class="card m-3" style="width: 18rem;">
             <img class="card-img-top" src="{{furniture.image.url}}" alt="{{furniture.image_alt}}">
             <div class="card-body">

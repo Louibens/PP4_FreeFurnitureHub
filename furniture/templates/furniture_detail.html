@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %} {{furniture_post.title}}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="furniture-info mt-3 p-1">
+            <div class="furniture-img">
+                <img src="{{ furniture_post.image.url }}" alt="{{ furniture_post.image_alt }}" class="furniture_item-pic">
+            </div>
+            <div class="furniture-detail">
+                <h1 class="text-center">{{ furniture_post.title }}</h1>
+                <p class="text-center">Posted by {{furniture_post.user}} on {{furniture_post.posted_date}}</p>
+                <hr>
+                <p><strong>County: </strong>{{furniture_post.county.title}}</p>
+                <p><strong>Town: </strong>{{furniture_post.town.title}}</p>
+                <p><strong>Condition: </strong>{{furniture_post.condition}}</p>
+
+                {% if request.user == furniture_post.user %}
+                <div class="text-center user_btns">
+                    <a href="#" class="btn btn-primary w-25">Edit</a>
+                    <a href="#" class="btn btn-primary w-25">Delete</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="furniture-container">
+            <div class="description p-3">
+                <h2>Description</h2>
+                <p>{{ furniture_post.description|safe }}</p>
+            </div>
+            <!-- Comment box -->
+            {% if user.is_authenticated %}
+
+                
+
+                {% if not furniture_item.comments.all %}
+                    No Comments Yet...<a href="#">Add One</a>
+                {% else %}
+                    {% for comment in furniture_item.comments.all %}
+                        <strong>
+                            {{ comment.name }} - 
+                            {{ comment.created_on }}
+                        </strong>
+                            {{ comment.body }}
+                    {% endfor %}
+                {% endif %}
+                    <br></br>
+                <h3>Leave a comment:</h3>
+
+
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary w-25">Submit</button>
+                </form>
+                {% endif %}
+        </div>
+    </div>
+{% endblock %}
