@@ -12,7 +12,7 @@ from .forms import FurnitureForm, CommentForm
 
 class AddFurniture(LoginRequiredMixin, CreateView):
     """Add furniture """
-    template_name = "add_furniture.html"
+    template_name = "furniture/add_furniture.html"
     model = Furniture
     form_class = FurnitureForm
     success_url = "/furniture/"
@@ -25,17 +25,13 @@ class AddFurniture(LoginRequiredMixin, CreateView):
 class FurnitureItems(ListView):
     """View all furniture items"""
 
-    template_name = "furniture_items.html"
+    template_name = "furniture/furniture_items.html"
     model = Furniture
     context_object_name = "furniture_items"
 
 
 class FurnitureDetail(DetailView):
     """View a single item of furniture"""
-
-    # template_name = "furniture/furniture_detail.html"
-    # model = Furniture
-    # context_object_name = "furniture_item"
 
     def get(self, request, pk, *args, **kwargs):
         queryset = Furniture.objects
@@ -44,7 +40,7 @@ class FurnitureDetail(DetailView):
 
         return render(
             request,
-            "furniture_detail.html",
+            "furniture/furniture_detail.html",
             {
                 "furniture_post": furniture_post,
                 "comments": comments,
@@ -62,18 +58,19 @@ class FurnitureDetail(DetailView):
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = post
+            comment.post = furniture_post
             comment.save()
         else:
             comment_form = CommentForm()
 
         return render(
             request,
-            "furniture_detail.html",
+            "furniture/furniture_detail.html",
             {
                 "furniture_post": furniture_post,
                 "comments": comments,
-                "comment_form": comment_form,
+                "comment_form": CommentForm()
+
 
             },
         )

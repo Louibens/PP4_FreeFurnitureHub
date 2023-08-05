@@ -3,6 +3,9 @@
 {% block title %} {{furniture_post.title}}{% endblock %}
 
 {% block content %}
+
+{% load crispy_forms_tags %}
+
     <div class="container">
         <div class="furniture-info mt-3 p-1">
             <div class="furniture-img">
@@ -29,28 +32,26 @@
                 <h2>Description</h2>
                 <p>{{ furniture_post.description|safe }}</p>
             </div>
+
             <!-- Comment box -->
-            {% if user.is_authenticated %}
-
-                
-
-                {% if not furniture_item.comments.all %}
-                    No Comments Yet...<a href="#">Add One</a>
+                      
+                {% if not furniture_post.comments.all %}
+                    No Comments Yet...
                 {% else %}
-                    {% for comment in furniture_item.comments.all %}
+                    {% for comment in furniture_post.comments.all %}
                         <strong>
                             {{ comment.name }} - 
                             {{ comment.created_on }}
                         </strong>
-                            {{ comment.body }}
+                            {{ comment.message }}
                     {% endfor %}
                 {% endif %}
                     <br></br>
                 <h3>Leave a comment:</h3>
 
-
+                {% if user.is_authenticated %}   
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
+                <form method="POST" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-primary w-25">Submit</button>
