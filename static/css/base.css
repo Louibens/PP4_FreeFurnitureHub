@@ -204,3 +204,13 @@ a.img-container:hover {
     left: 50%;
     transform: translate(-50%, -50%)
 }
+
+.carousel-item {
+    width: 65%;
+    height: 25em
+}
+
+.carousel-cont {
+    display: block;
+    width: 100%
+}
