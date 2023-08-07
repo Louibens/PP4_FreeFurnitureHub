@@ -7,7 +7,9 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
 
-from .models import Furniture
+from django.db.models import Q
+
+from .models import Furniture, Comment
 from .forms import FurnitureForm, CommentForm
 
 
@@ -29,6 +31,19 @@ class FurnitureItems(ListView):
     template_name = "furniture/furniture_items.html"
     model = Furniture
     context_object_name = "furniture_items"
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            furniture_items = self.model.objects.filter(
+                Q(title__icontains=query) | 
+                Q(description__icontains=query) |
+                Q(county__icontains=query) |
+                Q(room__icontains=query)
+            )
+        else:
+            furniture_items = self.model.objects.all()
+        return furniture_items
 
 
 class FurnitureDetail(DetailView):
