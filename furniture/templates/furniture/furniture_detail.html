@@ -22,8 +22,8 @@
 
                 {% if request.user == furniture_post.user %}
                 <div class="text-center user_btns">
-                    <a href="{% url 'edit_furniture' furniture_post.id %}" class="btn btn-primary w-25">Edit</a>
-                    <a href="{% url 'delete_furniture' furniture_post.id %}" class="btn btn-primary w-25">Delete</a>
+                    <a href="{% url 'edit_furniture' furniture_post.id %}" class="btn buttons w-25">Edit</a>
+                    <a href="{% url 'delete_furniture' furniture_post.id %}" class="btn buttons w-25">Delete</a>
                 </div>
                 {% endif %}
             </div>
@@ -69,7 +69,7 @@
                         <form method="post" style="margin-top: 1.3em;">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-primary w-25">Submit</button>
+                            <button type="submit" class="btn buttons w-25">Submit</button>
                         </form>
                         {% endif %}
 
