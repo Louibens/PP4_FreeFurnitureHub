@@ -217,6 +217,18 @@ a.img-container:hover {
     color: white;
 }
 
+.btn-outline-primary {
+    color: white ;
+    background-color: #768DC3;
+    border-color: #768DC3 !important;
+}
+
+.btn-outline-primary:hover {
+    color: black;
+    background-color: #768DC3;
+    border-color: #768DC3;
+}
+
 /* Footer */
 
 footer {
