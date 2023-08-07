@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
 
 from django.shortcuts import render, get_object_or_404
 
@@ -72,3 +72,12 @@ class FurnitureDetail(DetailView):
                 "comment_form": CommentForm()
             },
         )
+
+
+class DeleteFurniture(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """Delete an item of furniture """
+    model = Furniture
+    success_url = '/furniture/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
