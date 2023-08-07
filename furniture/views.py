@@ -1,4 +1,5 @@
-from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.views.generic import (CreateView, ListView, 
+    DetailView, DeleteView, UpdateView)
 
 from django.shortcuts import render, get_object_or_404
 
@@ -72,6 +73,17 @@ class FurnitureDetail(DetailView):
                 "comment_form": CommentForm()
             },
         )
+
+
+class EditFurniture(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """Edit a furniture post"""
+    template_name = 'furniture/edit_furniture.html'
+    model = Furniture
+    form_class = FurnitureForm
+    success_url = '/furniture/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
 
 
 class DeleteFurniture(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

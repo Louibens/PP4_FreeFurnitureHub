@@ -36,7 +36,9 @@ class FurnitureForm(forms.ModelForm):
             "county": "County",
             "town": "Town",
             "condition": "Condition",
+            
         }
+
 
 
 class CommentForm(forms.ModelForm):

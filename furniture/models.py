@@ -80,7 +80,6 @@ class Furniture(models.Model):
     """
     user = models.ForeignKey(User, related_name="furniture_owner", on_delete=models.CASCADE)
     title = models.CharField(max_length=300, null=False, blank=False)
-    slug = models.SlugField(max_length=200, unique=True)
     furniture_type = models.CharField(max_length=50, choices=FURNITURE_TYPES, default="armchair")
     room = models.CharField(max_length=50, choices=ROOMS, default="bathroom")
     description = RichTextField(max_length=10000, null=False, blank=False)
