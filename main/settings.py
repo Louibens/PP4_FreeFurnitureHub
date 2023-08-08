@@ -29,9 +29,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['8000-louibens-pp4freefurnitu-50sdv7hyyf9.ws-eu102.gitpod.io', 'free-furniture-hub-10db98e468e6.herokuapp.com', 'localhost']
 
@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
-    # 'djrichtextfield',
     'crispy_forms',
     'crispy_bootstrap5',
 
@@ -61,19 +60,6 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-
-# DJRICHTEXTFIELD_CONFIG = {
-#     'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
-#     'init_template': 'djrichtextfield/init/ckeditor.js',
-#     'settings': {
-#         'toolbar': [
-#             ['Format', 'Bold', 'Italic', 'Underline'],
-#             ['NumberedList', 'BulletedList'], ['Undo', 'Redo'],
-#             ['Maximize']
-#         ],
-#         'format_tags': 'p;h1;h2;h3'
-#     }
-# }
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
