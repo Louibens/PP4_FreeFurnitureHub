@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from djrichtextfield.models import RichTextField
+# from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from cloudinary.models import CloudinaryField
 
@@ -82,7 +82,7 @@ class Furniture(models.Model):
     title = models.CharField(max_length=300, null=False, blank=False)
     furniture_type = models.CharField(max_length=50, choices=FURNITURE_TYPES, default="armchair")
     room = models.CharField(max_length=50, choices=ROOMS, default="bathroom")
-    description = RichTextField(max_length=10000, null=False, blank=False)
+    description = models.TextField(max_length=10000, null=False, blank=False)
     county = models.CharField(max_length=50, choices=COUNTIES, default="antrim")
     town = models.CharField(max_length=100, null=False, blank=False)
     image = ResizedImageField(

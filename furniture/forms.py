@@ -1,5 +1,4 @@
 from django import forms
-from djrichtextfield.widgets import RichTextWidget
 from .models import Furniture, Comment
 
 
@@ -20,7 +19,7 @@ class FurnitureForm(forms.ModelForm):
             "condition",
         ]
 
-        description = forms.CharField(widget=RichTextWidget())
+        description = forms.CharField()
 
         widget = {
             "description": forms.Textarea(attrs={"rows": 5}),
