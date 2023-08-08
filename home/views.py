@@ -12,7 +12,7 @@ class Index(ListView):
     context_object_name = 'furniture_items'
 
     def get_queryset(self):
-        return self.model.objects.all()[:6]
+        return self.model.objects.all()[:3]
 
 
 class HowItWorks(ListView):
@@ -20,4 +20,4 @@ class HowItWorks(ListView):
     model = Furniture
  
     def get_queryset(self):
-        return self.model.objects.all()[:3]
+        return self.model.objects.all()
