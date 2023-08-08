@@ -86,7 +86,7 @@ class FurnitureDetail(DetailView):
                 "furniture_post": furniture_post,
                 "commented": True,
                 "comments": comments,
-                "comment_form": comment_form
+                "comment_form": CommentForm()
             },
         )
 
