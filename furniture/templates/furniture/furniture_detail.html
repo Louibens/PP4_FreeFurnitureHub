@@ -74,6 +74,8 @@
                             {% csrf_token %}
                             <button type="submit" class="btn buttons w-25">Submit</button>
                         </form>
+                        {% else %}
+                        <p><strong>Register</strong> or <strong>Sign in</strong> to add a comment</p>
                         {% endif %}
 
                     </div>

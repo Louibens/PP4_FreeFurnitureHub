@@ -24,6 +24,12 @@
       <div class="collapse navbar-collapse nav-items-display" id="navbarNav">
         <div class="container-fluid me-auto nav-cont">
           <ul class="navbar-nav ">
+            {% if request.user.is_authenticated and request.user.username == "Free4UAdmin" %}
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page"
+                href="https://8000-louibens-pp4freefurnitu-50sdv7hyyf9.ws-eu102.gitpod.io/admin/">Admin</a>
+            </li>
+            {% endif %}
             <li class="nav-item">
               <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
                 href="{% url 'home' %}">Home</a>

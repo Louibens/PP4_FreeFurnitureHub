@@ -14,9 +14,9 @@
         <div class="card m-3" style="width: 18rem;">
             <img class="card-img-top" src="{{furniture.image.url}}" alt="{{furniture.image_alt}}">
             <div class="card-body">
-              <h2 class="card-title">{{furniture.title}}</h2>
-              <p class="card-text"><strong>Location: {{furniture.county.title}}</strong></p>
-              <p class="card-text">Posted on: {{furniture.posted_date}}</p>
+              <h3 class="card-title">{{furniture.title}}</h3>
+              <p class="card-text"><strong>Location: {{furniture.county.title}}</strong>
+              <br>Posted on: {{furniture.posted_date}}</p>
               <p class="card-text">{{furniture.description|truncatechars:50}}</p>
             </div>
           </div>
