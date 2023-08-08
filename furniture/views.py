@@ -74,7 +74,7 @@ class FurnitureDetail(DetailView):
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = furniture_post
+            comment.furniture_post = furniture_post
             comment.save()
         else:
             comment_form = CommentForm()
@@ -84,8 +84,9 @@ class FurnitureDetail(DetailView):
             "furniture/furniture_detail.html",
             {
                 "furniture_post": furniture_post,
+                "commented": True,
                 "comments": comments,
-                "comment_form": CommentForm()
+                "comment_form": comment_form
             },
         )
 
