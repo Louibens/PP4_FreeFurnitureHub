@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import (
 )
 
 from django.db.models import Q
+from django.contrib import messages
 
 from .models import Furniture, Comment
 from .forms import FurnitureForm, CommentForm
@@ -76,6 +77,7 @@ class FurnitureDetail(DetailView):
             comment = comment_form.save(commit=False)
             comment.furniture_post = furniture_post
             comment.save()
+            messages.success(request, 'Your comment has been posted!')
         else:
             comment_form = CommentForm()
 

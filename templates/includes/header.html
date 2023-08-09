@@ -27,7 +27,7 @@
             {% if request.user.is_authenticated and request.user.username == "Free4UAdmin" %}
             <li class="nav-item">
               <a class="nav-link" aria-current="page"
-                href="https://8000-louibens-pp4freefurnitu-50sdv7hyyf9.ws-eu102.gitpod.io/admin/">Admin</a>
+                href="https://free-furniture-hub-10db98e468e6.herokuapp.com/admin/">Admin</a>
             </li>
             {% endif %}
             <li class="nav-item">
@@ -60,22 +60,34 @@
               <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}"
                 href="/accounts/login/">Login</a>
             </li>
-            {% endif %}
+            {% endif %}                  
+            <!-- {% if user.is_authenticated %}
+          <span class="nav-link">
+              <i class="far fa-user"></i> {{ user.username }}
+          </span>
+          {% endif %} -->
           </ul>
 
         </div>
+
         <!-- Form for search box -->
         <div class="container-fluid me-auto nav-cont">
           <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
             <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
-          </form>
+          </form>        
+          {% if user.is_authenticated %}
+          <span class="nav-link">
+              <i class="far fa-user"></i> {{ user.username }}
+          </span>
+          {% endif %}
         </div>
+
       </div>
 
     </div>
   </nav>
-  <!-- Alert messagin -->
+  <!-- Alert messaging -->
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
