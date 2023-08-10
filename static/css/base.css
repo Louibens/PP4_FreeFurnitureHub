@@ -287,6 +287,10 @@ footer {
     color: black;
 }
 
+.desktop-display {
+    display: none;
+}
+
 
 @media screen and (max-width: 1000px) {
     .hide {
@@ -303,7 +307,19 @@ footer {
 
     .tffh_logo {
         font-size: 18px;
+    }
 
+    .desktop-display {
+        display: none;
+    }
+
+    .mobile-display {
+        display: block;
+        padding-top: 5px
+    }
+
+    .user {
+        display: none;
     }
 
 }

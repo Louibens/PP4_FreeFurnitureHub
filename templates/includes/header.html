@@ -61,17 +61,13 @@
                 href="/accounts/login/">Login</a>
             </li>
             {% endif %}                  
-            <!-- {% if user.is_authenticated %}
-          <span class="nav-link">
-              <i class="far fa-user"></i> {{ user.username }}
-          </span>
-          {% endif %} -->
+
           </ul>
 
         </div>
 
         <!-- Form for search box -->
-        <div class="container-fluid me-auto nav-cont">
+        <div class="container-fluid me-auto nav-cont desktop-display">
           <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
             <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
@@ -107,6 +103,18 @@
 
   {% endwith %}
 </header>
+<!-- Form for search box for mobile display-->
+<div class="container-fluid me-auto nav-cont mobile-display">
+  <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
+    <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-primary" type="submit">Search</button>
+  </form>        
+  {% if user.is_authenticated %}
+  <span class="user">
+      <i class="far fa-user"></i> {{ user.username }}
+  </span>
+  {% endif %}
+</div>
 <!-- Javascript for Alerts -->
 <script>
   setTimeout(function () {
