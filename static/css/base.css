@@ -95,8 +95,13 @@ img.logo {
     flex-direction: row;
 }
 
-.logo-text {
-    width: 150px;
+.logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.tffh_logo {
     font-family: 'DM Sans', sans-serif !important;
     font-size: 32px;
     
@@ -282,8 +287,23 @@ footer {
     color: black;
 }
 
-@media screen and (max-width: 600px) {
-.hide {
-    display: none !important;
+
+@media screen and (max-width: 1000px) {
+    .hide {
+        display: none !important;
+    }
 }
+
+@media screen and (max-width: 600px) {
+
+
+    .logo {
+        max-width: 70px
+    }
+
+    .tffh_logo {
+        font-size: 18px;
+
+    }
+
 }
