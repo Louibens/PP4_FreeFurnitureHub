@@ -99,18 +99,19 @@ img.logo {
     width: 100%;
     max-width: 400px;
     height: auto;
+
 }
 
 .tffh_logo {
     font-family: 'DM Sans', sans-serif !important;
     font-size: 32px;
-    
+    color: rgba(0,0,0,.55);
 }
 
 .user {
     font-size 12px:;
     padding-right: 1rem;
-    color: var(--brown);
+    color: rgba(0,0,0,.55)
 }
 
 
@@ -258,7 +259,7 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     list-style-type: none;
-    color: black;
+    color: rgba(0,0,0,.55);
     bottom: 0;
     font-size: 14px;
 }
@@ -283,12 +284,12 @@ footer {
     font-size: 160%;
     margin: 1%;
     text-decoration: none;
-    color: black;
+
 }
 
 .social-networks li a {
     text-decoration: none;
-    color: black;
+    color: rgba(0,0,0,.55);
 }
 
 .disclaimer {
@@ -297,7 +298,7 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 5px;
-    color: black;
+    color: rgba(0,0,0,.55)
 }
 
 .mobile-display {
