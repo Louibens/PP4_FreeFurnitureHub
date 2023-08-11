@@ -107,7 +107,11 @@ img.logo {
     
 }
 
-
+.user {
+    font-size 12px:;
+    padding-right: 1rem;
+    color: var(--brown);
+}
 
 
 /* Form */
@@ -185,6 +189,15 @@ a.img-container:hover {
 .img-container img {
     width: 100%;
     height: auto;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.card-text {
+    margin-bottom: 0.2rem;
 }
 
 .centered {
@@ -287,15 +300,23 @@ footer {
     color: black;
 }
 
-.desktop-display {
-    display: none;
-}
+.mobile-display {
+    display: none
+} 
 
 
-@media screen and (max-width: 1000px) {
-    .hide {
-        display: none !important;
+
+
+@media screen and (max-width: 990px) {
+    .desktop-display {
+        display: none
     }
+    
+    .mobile-display {
+        display: block;
+        padding-top: 5px
+    }
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -307,15 +328,6 @@ footer {
 
     .tffh_logo {
         font-size: 18px;
-    }
-
-    .desktop-display {
-        display: none;
-    }
-
-    .mobile-display {
-        display: block;
-        padding-top: 5px
     }
 
     .user {

@@ -48,16 +48,16 @@
                 href="{% url 'add_furniture' %}">Create post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}"
+              <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}"
                 href="/accounts/logout/">Logout</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}"
+              <a class="nav-link {% if url_name == 'account_signup' %}active{% endif %}"
                 href="/accounts/signup/">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}"
+              <a class="nav-link {% if url_name == 'account_login' %}active{% endif %}"
                 href="/accounts/login/">Login</a>
             </li>
             {% endif %}                  
@@ -68,15 +68,16 @@
 
         <!-- Form for search box -->
         <div class="container-fluid me-auto nav-cont desktop-display">
+          {% if user.is_authenticated %}
+          <span class="user">
+              <i class="far fa-user"></i> {{ user.username }}
+          </span>
+          {% endif %}
           <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
             <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>        
-          {% if user.is_authenticated %}
-          <span class="nav-link">
-              <i class="far fa-user"></i> {{ user.username }}
-          </span>
-          {% endif %}
+
         </div>
 
       </div>
@@ -104,7 +105,7 @@
   {% endwith %}
 </header>
 <!-- Form for search box for mobile display-->
-<div class="container-fluid me-auto nav-cont mobile-display">
+<div class="container-fluid me-auto nav-cont mobile-display desktop-display">
   <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
     <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-primary" type="submit">Search</button>

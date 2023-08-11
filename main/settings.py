@@ -33,7 +33,7 @@ DEBUG = 'DEBUG' in os.environ
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-louibens-pp4freefurnitu-50sdv7hyyf9.ws-eu102.gitpod.io', 'free-furniture-hub-10db98e468e6.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-louibens-pp4freefurnitu-50sdv7hyyf9.ws-eu103.gitpod.io', 'free-furniture-hub-10db98e468e6.herokuapp.com', 'localhost']
 
 # Application definition
 
