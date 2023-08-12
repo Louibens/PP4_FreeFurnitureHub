@@ -18,9 +18,12 @@
             Do you believe in the power of giving back to the community while making a positive impact on the environment? 
             <br>
             <strong>If your answer is a resounding "Yes!", then you've come to the right place!</strong>
-            <hr>
-            <strong><a href="/accounts/signup/">Register</a></strong>
-
+            {% if request.user.is_authenticated %}
+            {% else %}
+            <br>
+            <a href="/accounts/signup/"></a><button type="submit" class="btn buttons mt-2">Register Now</button></a>
+            {% endif %}
+<hr>
         </p>
         
     </section>
