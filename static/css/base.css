@@ -218,18 +218,12 @@ a.img-container:hover {
 .carousel-cont {
     display: block;
     width: 65%;
-    margin: 0 auto
+    margin: 0 auto;
+    height: 25em
 }
 
 
-.HIW_container {
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto
-}
+
 
 .buttons {
     background-color: #768DC3;
@@ -317,6 +311,10 @@ footer {
         display: block;
         padding-top: 5px
     }
+
+    .hide {
+        display: none;
+    }
     
 }
 
@@ -334,5 +332,7 @@ footer {
     .user {
         display: none;
     }
+
+
 
 }

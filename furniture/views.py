@@ -111,3 +111,21 @@ class DeleteFurniture(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+
+class MyItems(LoginRequiredMixin, UserPassesTestMixin, ListView):
+    """ Display all post by particular user """
+
+    template_name = "furniture/my_items.html"
+    model = Furniture
+    context_object_name = "my_items"
+
+    def get_queryset(self):
+        return Furniture.objects.filter(user=self.request.user)
+
+    def test_func(self):
+        user = self.request.user
+        user_items = self.get_queryset().first().user
+        return user == user_items
+
+
