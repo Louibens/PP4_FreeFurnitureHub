@@ -57,7 +57,7 @@ main {
 
 .nav-link {
     color: var(--brown);
-    font-size: 1.2rem !important;
+    font-size: 1.2em;
     letter-spacing: 2px;
     margin: 8px
 }
@@ -109,7 +109,7 @@ img.logo {
 }
 
 .user {
-    font-size 12px:;
+    font-size: 16px;
     padding-right: 1rem;
     color: rgba(0,0,0,.55)
 }
@@ -300,7 +300,22 @@ footer {
 } 
 
 
+@media screen and (max-width: 1252px) {
+.nav-link {
+    font-size: 1em;
+}
 
+.logo {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+
+}
+
+.tffh_logo {
+    font-size: 24px;
+}
+}
 
 @media screen and (max-width: 990px) {
     .desktop-display {
@@ -332,7 +347,5 @@ footer {
     .user {
         display: none;
     }
-
-
 
 }

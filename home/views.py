@@ -18,6 +18,6 @@ class Index(ListView):
 class HowItWorks(ListView):
     template_name = 'home/how_it_works.html'
     model = Furniture
- 
+
     def get_queryset(self):
         return self.model.objects.all()

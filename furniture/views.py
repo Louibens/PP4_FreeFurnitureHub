@@ -1,5 +1,5 @@
-from django.views.generic import (CreateView, ListView, 
-    DetailView, DeleteView, UpdateView)
+from django.views.generic import (CreateView, ListView, DetailView,
+                                  DeleteView, UpdateView)
 
 from django.shortcuts import render, get_object_or_404
 
@@ -37,7 +37,7 @@ class FurnitureItems(ListView):
         query = self.request.GET.get('q')
         if query:
             furniture_items = self.model.objects.filter(
-                Q(title__icontains=query) | 
+                Q(title__icontains=query) |
                 Q(description__icontains=query) |
                 Q(county__icontains=query) |
                 Q(room__icontains=query)
@@ -64,7 +64,7 @@ class FurnitureDetail(DetailView):
                 "comment_form": CommentForm(),
             },
         )
-    
+
     def post(self, request, pk, *args, **kwargs):
 
         queryset = Furniture.objects
@@ -127,5 +127,3 @@ class MyItems(LoginRequiredMixin, UserPassesTestMixin, ListView):
         user = self.request.user
         user_items = self.get_queryset().first().user
         return user == user_items
-
-

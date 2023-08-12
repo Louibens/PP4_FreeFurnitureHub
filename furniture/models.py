@@ -70,7 +70,6 @@ COUNTIES = (
     ("westmeath", "Westmeath"),
     ("wexford", "Wexford"),
     ("wicklow", "Wicklow"),
-    
 )
 
 
@@ -78,12 +77,15 @@ class Furniture(models.Model):
     """
     A model to create and manage furniture posts
     """
-    user = models.ForeignKey(User, related_name="furniture_owner", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="furniture_owner",
+                             on_delete=models.CASCADE)
     title = models.CharField(max_length=300, null=False, blank=False)
-    furniture_type = models.CharField(max_length=50, choices=FURNITURE_TYPES, default="armchair")
+    furniture_type = models.CharField(max_length=50, choices=FURNITURE_TYPES,
+                                      default="armchair")
     room = models.CharField(max_length=50, choices=ROOMS, default="bathroom")
     description = models.TextField(max_length=10000, null=False, blank=False)
-    county = models.CharField(max_length=50, choices=COUNTIES, default="antrim")
+    county = models.CharField(max_length=50, choices=COUNTIES,
+                              default="antrim")
     town = models.CharField(max_length=100, null=False, blank=False)
     image = ResizedImageField(
         size=[None, 400],
@@ -94,9 +96,10 @@ class Furniture(models.Model):
         null=False,
     )
     image_alt = models.CharField(max_length=100, null=False, blank=False)
-    condition = models.CharField(max_length=50, choices=CONDITION, default="as new")
+    condition = models.CharField(max_length=50, choices=CONDITION,
+                                 default="as new")
     posted_date = models.DateTimeField(auto_now=True)
-    
+
     class Meta:
         ordering = ["-posted_date"]
 
@@ -105,8 +108,9 @@ class Furniture(models.Model):
 
 
 class Comment(models.Model):
-    
-    furniture_post = models.ForeignKey(Furniture, on_delete=models.CASCADE, related_name='comments', null=True)
+
+    furniture_post = models.ForeignKey(Furniture, on_delete=models.CASCADE,
+                                       related_name='comments', null=True)
     name = models.CharField(max_length=80)
     message = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
