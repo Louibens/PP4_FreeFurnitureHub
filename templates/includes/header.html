@@ -47,10 +47,7 @@
               <a class="nav-link {% if url_name == 'add_furniture' %}active{% endif %}"
                 href="{% url 'add_furniture' %}">Create post</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link {% if url_name == 'my_items' %}active{% endif %}"
-                href="{% url 'my_items' %}">My Items</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}"
                 href="/accounts/logout/">Logout</a>
@@ -64,8 +61,13 @@
               <a class="nav-link {% if url_name == 'account_login' %}active{% endif %}"
                 href="/accounts/login/">Login</a>
             </li>
-            {% endif %}                  
-
+            {% endif %}  
+            {% if request.user.is_authenticated and request.user.furniture_owner.count > 0 %}
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'my_items' %}active{% endif %}"
+                href="{% url 'my_items' %}">My Items</a>
+            </li>                
+            {% endif %}
           </ul>
 
         </div>
@@ -74,7 +76,7 @@
         <div class="container-fluid me-auto nav-cont desktop-display">
           {% if user.is_authenticated %}
           <span class="user">
-              <i class="far fa-user"></i> {{ user.username }}
+              <i class="far fa-user"></i> {{ user.username.title }}
           </span>
           {% endif %}
           <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
