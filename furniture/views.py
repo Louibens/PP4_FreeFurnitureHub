@@ -94,7 +94,8 @@ class FurnitureDetail(DetailView):
         )
 
 
-class EditFurniture(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+class EditFurniture(LoginRequiredMixin, UserPassesTestMixin,
+                    SuccessMessageMixin, UpdateView):
     """Edit a furniture post"""
     template_name = 'furniture/edit_furniture.html'
     model = Furniture
@@ -106,9 +107,12 @@ class EditFurniture(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin
         return self.request.user == self.get_object().user
 
 
-class DeleteFurniture(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+class DeleteFurniture(LoginRequiredMixin, UserPassesTestMixin,
+                      SuccessMessageMixin, DeleteView):
     """Delete an item of furniture """
+    template_name = 'furniture/furniture_confirm_delete.html'
     model = Furniture
+    form_class = FurnitureForm
     success_url = '/furniture/'
     success_message = "Your post was deleted successfully"
 

@@ -7,20 +7,20 @@
       <!-- Logo -->
       <div class="logos">
         <a class="navbar-brand" href="{% url 'home' %}">
-          <img src="https://res.cloudinary.com/doo82qk9r/image/upload/v1691767840/3249e2132c8a4e3fbb70897e49b7f830_yuv1kp.png"
+          <img
+            src="https://res.cloudinary.com/doo82qk9r/image/upload/v1691767840/3249e2132c8a4e3fbb70897e49b7f830_yuv1kp.png"
             alt="Free Furniture Logo" class="logo">
-
         </a>
         <h1 class="tffh_logo">The
           <br><strong>Free Furniture</strong>
           <br>Hub
         </h1>
       </div>
+      <!-- Navigation Items -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Navigation Items -->
       <div class="collapse navbar-collapse nav-items-display" id="navbarNav">
         <div class="container-fluid me-auto nav-cont">
           <ul class="navbar-nav ">
@@ -61,28 +61,28 @@
               <a class="nav-link {% if url_name == 'account_login' %}active{% endif %}"
                 href="/accounts/login/">Login</a>
             </li>
-            {% endif %}  
+            {% endif %}
             {% if request.user.is_authenticated and request.user.furniture_owner.count > 0 %}
             <li class="nav-item">
-              <a class="nav-link {% if url_name == 'my_items' %}active{% endif %}"
-                href="{% url 'my_items' %}">My Items</a>
-            </li>                
+              <a class="nav-link {% if url_name == 'my_items' %}active{% endif %}" href="{% url 'my_items' %}">My
+                Items</a>
+            </li>
             {% endif %}
           </ul>
-
         </div>
 
-        <!-- Form for search box -->
         <div class="container-fluid me-auto nav-cont desktop-display">
+          <!-- Display username on desktop and tablet -->
           {% if user.is_authenticated %}
           <span class="user">
-              <i class="far fa-user"></i> {{ user.username.title }}
+            <i class="far fa-user"></i> {{ user.username.title|truncatechars:25 }}
           </span>
           {% endif %}
+          <!-- Form for search box -->
           <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
             <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
-          </form>        
+          </form>
 
         </div>
 
@@ -115,10 +115,11 @@
   <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
     <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-primary" type="submit">Search</button>
-  </form>        
+  </form>
+  <!-- Display username for mobile display. Name truncated -->
   {% if user.is_authenticated %}
   <span class="user">
-      <i class="far fa-user"></i> {{ user.username }}
+    <i class="far fa-user"></i> {{ user.username.title|truncatechars:12  }}
   </span>
   {% endif %}
 </div>

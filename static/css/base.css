@@ -210,12 +210,11 @@ a.img-container:hover {
     transform: translate(-50%, -50%)
 }
 
-
 .purple-line {
     text-decoration: underline;
     text-decoration-color: #768DC3;
+    text-underline-offset: 20px
 }
-
 
 .buttons {
     background-color: #768DC3;

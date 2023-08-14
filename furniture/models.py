@@ -1,11 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-# from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
+# Furniture model choices
 
 FURNITURE_TYPES = (
     ("couch", "Couch"),
@@ -73,13 +71,16 @@ COUNTIES = (
 )
 
 
+# Furniture model
+
+
 class Furniture(models.Model):
     """
     A model to create and manage furniture posts
     """
     user = models.ForeignKey(User, related_name="furniture_owner",
                              on_delete=models.CASCADE)
-    title = models.CharField(max_length=300, null=False, blank=False)
+    title = models.CharField(max_length=15, null=False, blank=False)
     furniture_type = models.CharField(max_length=50, choices=FURNITURE_TYPES,
                                       default="armchair")
     room = models.CharField(max_length=50, choices=ROOMS, default="bathroom")
@@ -105,6 +106,9 @@ class Furniture(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
+# Comment model
 
 
 class Comment(models.Model):

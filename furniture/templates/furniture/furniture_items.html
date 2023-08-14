@@ -4,23 +4,23 @@
 
 {% block content %}
 <h1 class="text-center p-2">
-    Free Furniture looking for it's new home. 
+  Free Furniture looking for it's new home.
 </h1>
 <p class="text-center p-2">Search below or use the Search box above to help you find what you are looking for.</p>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
 
-    {% for furniture in furniture_items %}
-    <a href="{% url 'furniture_detail' furniture.id %}" class="furniture" aria-label="Click to view {{furniture.title}}">
-        <div class="card m-3" style="width: 18rem;">
-            <img class="card-img-top" src="{{furniture.image.url}}" alt="{{furniture.image_alt}}">
-            <div class="card-body">
-              <h3 class="card-title">{{furniture.title}}</h3>
-              <p class="card-text"><strong>Location: {{furniture.county.title}}</strong>
-              <br>Posted on: {{furniture.posted_date}}</p>
-              <p class="card-text">{{furniture.description|truncatechars:25}}</p>
-            </div>
-          </div>
-    </a>
-    {% endfor %}
+  {% for furniture in furniture_items %}
+  <a href="{% url 'furniture_detail' furniture.id %}" class="furniture" aria-label="Click to view {{furniture.title}}">
+    <div class="card m-3" style="width: 18rem;">
+      <img class="card-img-top" src="{{furniture.image.url}}" alt="{{furniture.image_alt}}" style="height:75%">
+      <div class="card-body">
+        <h3 class="card-title">{{furniture.title.title}}</h3>
+        <p class="card-text"><strong>Location: {{furniture.county.title}}</strong>
+          <br>Posted on: {{furniture.posted_date}}</p>
+        <p class="card-text">{{furniture.description|truncatechars:25}}</p>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
 </div>
 {% endblock %}

@@ -6,86 +6,86 @@
 
 {% load crispy_forms_tags %}
 
-    <div class="container">
-        <div class="furniture-info mt-3 p-1">
-            <div class="furniture-img">
-                <img src="{{ furniture_post.image.url }}" alt="{{ furniture_post.image_alt }}" class="furniture_item-pic">
-            </div>
-            <div class="furniture-detail">
-                <h1 class="text-center">{{ furniture_post.title }}</h1>
-                <p class="text-center">Posted by {{furniture_post.user.username.title}} on {{furniture_post.posted_date}}</p>
-                <hr>
-                <p><strong>County: </strong>{{furniture_post.county.title}}</p>
-                <p><strong>Town: </strong>{{furniture_post.town.title}}</p>
-                <p><strong>Condition: </strong>{{furniture_post.condition}}</p>
-
-                {% if request.user == furniture_post.user %}
-                <div class="text-center user_btns">
-                    <a href="{% url 'edit_furniture' furniture_post.id %}" class="btn buttons w-25">Edit</a>
-                    <a href="{% url 'delete_furniture' furniture_post.id %}" class="btn buttons w-25">Delete</a>
-                </div>
-                {% endif %}
-            </div>
+<div class="container">
+    <div class="furniture-info mt-3 p-1">
+        <div class="furniture-img">
+            <img src="{{ furniture_post.image.url }}" alt="{{ furniture_post.image_alt }}" class="furniture_item-pic">
         </div>
-        <div class="furniture-container">
-            <div class="description p-3">
-                <h2>Description</h2>
-                <p>{{ furniture_post.description|safe }}</p>
-            </div>
+        <div class="furniture-detail">
+            <h1 class="text-center">{{ furniture_post.title }}</h1>
+            <p class="text-center">Posted by {{furniture_post.user.username.title}} on {{furniture_post.posted_date}}
+            </p>
+            <hr>
+            <p><strong>County: </strong>{{furniture_post.county.title}}</p>
+            <p><strong>Town: </strong>{{furniture_post.town.title}}</p>
+            <p><strong>Condition: </strong>{{furniture_post.condition}}</p>
 
-            <!-- Comment box -->
-                      
-            <div class="row">
-                <div class="col-md-8 card mb-4  mt-3 ">
-                    <h3>Comments:</h3>
-                    <div class="card-body">
-                        {% if not furniture_post.comments.all %}
-                    No Comments Yet...
-                {% else %}
-                        <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-                        {% for comment in comments %}
-                        <div class="comments" style="padding: 10px;">
-                            <p class="font-weight-bold">
-                                <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                                {{ comment.name.title }}
-                                <span class=" text-muted font-weight-normal">
-                                    <!-- The comment's created date goes here -->
-                                    {{ comment.created_on }}
-                                </span> wrote:
-                            </p>
-                            <!-- The body of the comment goes before the | -->
-                            {{ comment.message | linebreaks }}
-                        </div>
-                        <!-- Our for loop ends here -->
-                        {% endfor %}
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="col-md-4 card mb-4  mt-3 ">
-                    <div class="card-body">
 
-                        
-                        {% if user.is_authenticated %}
-        
-                        <h3>Leave a comment:</h3>
-                        <p>Posting as: {{ user.username.title }}</p>
-                        <form method="post" style="margin-top: 1.3em;" class="comment-form">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="btn buttons mt-2">Submit</button>
-                        </form>
-                        {% else %}
-                        <p>
-                            <strong><a href="/accounts/signup/">Register</a></strong> 
-                            or 
-                            <strong><a href="/accounts/login/">Login</a></strong> to add a comment
-                        </p>
-                        {% endif %}
-
-                    </div>
-                </div>
-            </div>
-                
         </div>
     </div>
+    <div class="furniture-container">
+        <div class="description">
+            <h2>Description</h2>
+            <p>{{ furniture_post.description|safe }}</p>
+        </div>
+        {% if request.user == furniture_post.user %}
+        <div class="text-center user_btns">
+            <a href="{% url 'edit_furniture' furniture_post.id %}" class="btn buttons w-25">Edit</a>
+            <a href="{% url 'delete_furniture' furniture_post.id %}" class="btn buttons w-25">Delete</a>
+        </div>
+        {% endif %}
+        <!-- Comment box -->
+
+        <div class="row">
+            <div class="col-md-8 mb-4 mt-3 ">
+                <h3>Comments:</h3>
+                <div class="card-body">
+                    {% if not furniture_post.comments.all %}
+                    No Comments Yet...
+                    {% else %}
+                    <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                    {% for comment in comments %}
+                    <div class="comments" style="padding: 10px;">
+                        <p class="font-weight-bold">
+                            <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                            {{ comment.name.title }}
+                            <span class=" text-muted font-weight-normal">
+                                <!-- The comment's created date goes here -->
+                                {{ comment.created_on }}
+                            </span> wrote:
+                        </p>
+                        <!-- The body of the comment goes before the | -->
+                        {{ comment.message | linebreaks }}
+                    </div>
+                    <!-- Our for loop ends here -->
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-4 mb-4  mt-3 ">
+                <div class="card-body">
+
+                    {% if user.is_authenticated %}
+
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username.title }}</p>
+                    <form method="post" style="margin-top: 1.3em;" class="comment-form">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn buttons mt-2">Submit</button>
+                    </form>
+                    {% else %}
+                    <p>
+                        <strong><a href="/accounts/signup/">Register</a></strong>
+                        or
+                        <strong><a href="/accounts/login/">Login</a></strong> to add a comment
+                    </p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}
