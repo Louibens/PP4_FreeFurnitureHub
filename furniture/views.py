@@ -2,7 +2,7 @@ from django.views.generic import (CreateView, ListView, DetailView,
                                   DeleteView, UpdateView)
 
 from django.shortcuts import render, get_object_or_404
-
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
@@ -14,12 +14,13 @@ from .models import Furniture, Comment
 from .forms import FurnitureForm, CommentForm
 
 
-class AddFurniture(LoginRequiredMixin, CreateView):
+class AddFurniture(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """Add furniture """
     template_name = "furniture/add_furniture.html"
     model = Furniture
     form_class = FurnitureForm
     success_url = "/furniture/"
+    success_message = "Your post was created successfully"
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -93,21 +94,23 @@ class FurnitureDetail(DetailView):
         )
 
 
-class EditFurniture(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class EditFurniture(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     """Edit a furniture post"""
     template_name = 'furniture/edit_furniture.html'
     model = Furniture
     form_class = FurnitureForm
     success_url = '/furniture/'
+    success_message = "Your post was updated successfully"
 
     def test_func(self):
         return self.request.user == self.get_object().user
 
 
-class DeleteFurniture(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class DeleteFurniture(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     """Delete an item of furniture """
     model = Furniture
     success_url = '/furniture/'
+    success_message = "Your post was deleted successfully"
 
     def test_func(self):
         return self.request.user == self.get_object().user

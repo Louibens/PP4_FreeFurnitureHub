@@ -210,19 +210,11 @@ a.img-container:hover {
     transform: translate(-50%, -50%)
 }
 
-.carousel-item {
-    width: 65%;
-    height: 25em
+
+.purple-line {
+    text-decoration: underline;
+    text-decoration-color: #768DC3;
 }
-
-.carousel-cont {
-    display: block;
-    width: 65%;
-    margin: 0 auto;
-    height: 25em
-}
-
-
 
 
 .buttons {
