@@ -95,28 +95,49 @@
     - Links to 4 social networks to enable users to connect with us through our social channels
 
 ![Footer](documentation/images/footer.png)
+
+-   ### F06 CREATE ITEM PAGE
+
+    - If a user is logged in they will be able to add a furniture item post using the form
+
+![Items](documentation/images/create.png)
    
--   ### F06 OFFERS PAGE
+-   ### F07 OFFERS PAGE
 
     - Full listing of all furniture items that have been posted (and not deleted) on separate cards. 
     - Each card displays an image of the item, title, location, posted date and snippet of the item description
 
 ![Items](documentation/images/furniture_items.png)
 
--   ### F07 DETAILS PAGE
+-   ### F08 DETAILS PAGE
 
     - User can see large image of item, posted date and which user posted it. 
     - County, location, condition and full description are displayed.
+    - A user will not be able to see the Comment Form unless they sign in or register - appropriate links are provided
 
--   ### F08 COMMENTS
+![Items](documentation/images/detail_not_logged_in.png)
+
+-   ### F09 COMMENTS
 
     - User can see comments that have been added by other uses but can only add a comment if they are logged in. The user will be asked to Register or Sign In to add a comment.
     - The comments section will be used by users to arrange to have the item of furniture collected or ask questions.
 
--   ### F09 MY ITEMS
+-   ### F10 MY ITEMS
 
     - If a user has posted items and is logged in, they will have a My Items page added that they can navigate to via a link in the nav bar
     - The user can easily update and delete items from here
+
+-   ### F11 WELCOME MESSAGE
+
+    - If a user is not logged in, the user will see a Register Now button as a Call To Action to register on the website. 
+    - If the user is logged in, the Register Now button will not be displayed
+
+![Items](documentation/images/Register.png)
+
+-   ### HOW IT WORKS PAGE
+
+    - If a user is not logged in, the user will see a Register Now button as a Call To Action to register on the website. 
+    - If the user is logged in, the Register Now button will not be displayed
 
 
 #### Future Features
