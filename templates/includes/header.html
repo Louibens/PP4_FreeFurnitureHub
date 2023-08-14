@@ -70,7 +70,6 @@
             {% endif %}
           </ul>
         </div>
-
         <div class="container-fluid me-auto nav-cont desktop-display">
           <!-- Display username on desktop and tablet -->
           {% if user.is_authenticated %}
@@ -80,7 +79,7 @@
           {% endif %}
           <!-- Form for search box -->
           <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
-            <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control search me-2" name="q" type="search" placeholder="Search furniture" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
 
@@ -98,18 +97,13 @@
 
         <div class="alert {{ message.tags }} alert_dismissable fade show" id="msg" role="alert">
           {{ message | safe }}
-          <button type="button" class="btn-close" data_bs_dismiss="alert" aria-label="Close">
-
-          </button>
+          <button type="button" class="btn-close" data_bs_dismiss="alert" aria-label="Close"></button>
         </div>
-
         {% endfor %}
       </div>
     </div>
   </div>
-
   {% endwith %}
-</header>
 <!-- Form for search box for mobile display-->
 <div class="container-fluid me-auto nav-cont mobile-display desktop-display">
   <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
@@ -131,3 +125,4 @@
     alert.close();
   }, 3000);
 </script>
+</header>
