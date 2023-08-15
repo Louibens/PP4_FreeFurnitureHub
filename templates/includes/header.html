@@ -79,7 +79,8 @@
           {% endif %}
           <!-- Form for search box -->
           <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
-            <input class="form-control search me-2" name="q" type="search" placeholder="Search furniture" aria-label="Search">
+            <input class="form-control search me-2" name="q" type="search" placeholder="Search furniture"
+              aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
 
@@ -104,25 +105,25 @@
     </div>
   </div>
   {% endwith %}
-<!-- Form for search box for mobile display-->
-<div class="container-fluid me-auto nav-cont mobile-display desktop-display">
-  <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
-    <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-primary" type="submit">Search</button>
-  </form>
-  <!-- Display username for mobile display. Name truncated -->
-  {% if user.is_authenticated %}
-  <span class="user">
-    <i class="far fa-user"></i> {{ user.username.title|truncatechars:12  }}
-  </span>
-  {% endif %}
-</div>
-<!-- Javascript for Alerts -->
-<script>
-  setTimeout(function () {
-    let messages = document.getElementById("msg");
-    let alert = new bootstrap.Alert(messages);
-    alert.close();
-  }, 3000);
-</script>
+  <!-- Form for search box for mobile display-->
+  <div class="container-fluid me-auto nav-cont mobile-display desktop-display">
+    <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
+      <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </form>
+    <!-- Display username for mobile display. Name truncated -->
+    {% if user.is_authenticated %}
+    <span class="user">
+      <i class="far fa-user"></i> {{ user.username.title|truncatechars:12  }}
+    </span>
+    {% endif %}
+  </div>
+  <!-- Javascript for Alerts -->
+  <script>
+    setTimeout(function () {
+      let messages = document.getElementById("msg");
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 3000);
+  </script>
 </header>

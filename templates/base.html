@@ -2,10 +2,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Free Furniture Hub is focused on keeping beautiful furniture out of landfill and finding it a new home">
+    <meta name="description"
+        content="The Free Furniture Hub is focused on keeping beautiful furniture out of landfill and finding it a new home">
     <meta name="keywords" content="free furniture, ireland, free bed, free couch, free table, circular economy">
     <link rel='shortcut icon' type='image/x-icon' href="{% static 'images/favicon.ico' %}">
     {% block extra_css %}
@@ -22,11 +24,12 @@
 
     <title>Free Furniture Hub - {% block title %}{% endblock %}</title>
 </head>
+
 <body>
     {% include 'includes/header.html' %}
     <main>
         {% block content %}
-        
+
         {% endblock %}
     </main>
     {% include 'includes/footer.html' %}
@@ -34,4 +37,5 @@
 
     <script src="https://kit.fontawesome.com/70893e8ef4.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

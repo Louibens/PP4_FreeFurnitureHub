@@ -207,25 +207,25 @@ a.img-container:hover {
 
 .purple-line {
     text-decoration: underline;
-    text-decoration-color: #768DC3;
+    text-decoration-color: var(--blue);
     text-underline-offset: 20px
 }
 
 .buttons {
-    background-color: #768DC3;
+    background-color: var(--blue);
     color: white;
 }
 
 .btn-outline-primary {
     color: white ;
-    background-color: #768DC3;
-    border-color: #768DC3 !important;
+    background-color: var(--blue);
+    border-color: var(--blue) !important;
 }
 
 .btn-outline-primary:hover {
     color: black;
-    background-color: #768DC3;
-    border-color: #768DC3;
+    background-color: var(--blue);
+    border-color: var(--blue);
 }
 
 .logout {

@@ -2,7 +2,7 @@
 
 [View the live project here](https://free-furniture-hub-10db98e468e6.herokuapp.com/)
 
-
+![AmIResponsive](documentation/images/amiresponsive.png)
 
 ## Index – Table of Contents
 * [Planning](#planning) 
@@ -17,7 +17,8 @@
 ## Planning
 
 - Link to Github Project board that User Storires were added and managed from [Free Furniture Agile Tool](https://github.com/users/Louibens/projects/4/views/1)
-
+- The User Stories have acceptance criteria and labels to show whether the requirement was Must Have, Should Have, Won't have.
+- 2 User Stories that were not implemented as part of this sprint have been added to a Next iteration column/channel and have been captured in the Future Features section below.
 
 - The ideal user is:
 
@@ -50,13 +51,12 @@
         6. As a registered user, I want to be able to view the items that I have posted
         7. As a registered user, I want to be able to manage items that I have posted – update or delete
     
-      
 ## Features
 
 -   ### F01 LOGO and COMPANY NAME
 
     - The company logo incorporates furniture shapes to emphasise what the website is about.
-    - The company name is positioned beside the logo using FONT
+    - The company name is positioned beside the logo using DM Sans
     - A user can click on the logo to bring them to the homepage
     - The logo was created on freelogodesign.org website. The chair shape was chosen as it ties in with the furniture theme. This is combined with the text logo at the top left of the website which users will naturally read first.
 
@@ -163,26 +163,43 @@
     - The sign in, sign up and logout allauth pages have been styled using crispy forms
 
 
-
-
 #### Future Features
 
+-   ### Filtering
 
+    - A filter could be applied on the Offers page to apply several search criteria. Currently the user can only search for one term at a time so for example, they can't currently search for couches in Dublin.
+
+-   ### Liking
+
+    - A like feature would make the website more interactive for users and would give the furniture poster an indication of how popular their item of furniture is.
+
+-   ### Direct Messaging
+
+    - A direct messaging feature would improve the user experience when they are arranging to collect furniture items as a user may not want to have that conversation in the comments section which is publicly visible.
+
+-   ### Notifications
+
+    - It would be beneficial if the item poster was notified when someone comments on their item to ensure it is not missed and arrangements can be made to have the item collected.
+
+-   ### Contact Us 
+
+    - In order to receive feedback and hear from our users it would be good to have a Contact Us form
 
 ## Design
 
 -   ### Title/Logo
-
+    - The company logo incorporates furniture shapes to emphasise what the website is about. The company name is positioned to the right of the logo using DM Sans font from GoogleFonts. This was selected as an easy to read and accessible font.
+    - The logo was created on freelogodesign.org website. 
 
 -   ### Imagery
 
 
+
 -   ### Colour
 
+  - The below colour palette was chosen for a neutral and natural feel
 
--   ### Flow chart
-
-
+![Items](documentation/images/color_palette.png)
 
 
 ## Technologies Used
@@ -222,7 +239,7 @@
     <details>
         <summary>Manual testing</summary>
 
-        ![Testing](documentation/testing/testing-ffh-v3.pdf)
+![Testing](documentation/testing/testing-ffh-v3.pdf)
     </details>
 
 
@@ -259,6 +276,11 @@ Detailed below are instructions on how to clone this project repository and the 
   - git push
 
 - N.B. Any changes pushed to the master branch will take effect on the live project once the application is re-deployed from Heroku
+
+### How to fork the repository
+
+- Go to the https://github.com/Louibens/ms1-Sustainability_Ireland repository on GitHub 
+- Click the "Fork" button in the top right corner
 
 ### Create Application and Postgres DB on Heroku
 - Log in to Heroku at https://heroku.com - create an account if needed.
