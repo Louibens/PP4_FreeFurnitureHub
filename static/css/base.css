@@ -329,6 +329,10 @@ footer {
     .hide {
         display: none;
     }
+
+    .nav-link {
+        padding: 0;
+    }
     
 }
 
