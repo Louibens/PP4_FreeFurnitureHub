@@ -31,6 +31,12 @@
   - To reduce the amount of waste going to landfill
   - To encourage a sustainable mindset
 
+- Model diagram
+
+  - The diagram visually represents how the database models are connected
+
+![Database](documentation/images/model_diagram.png)
+
 ## User Experience (UX)
 
 -   ### User stories
@@ -127,6 +133,8 @@
     - If a user has posted items and is logged in, they will have a My Items page added that they can navigate to via a link in the nav bar
     - The user can easily update and delete items from here
 
+![Items](documentation/images/my_items.png)
+
 -   ### F11 WELCOME MESSAGE
 
     - If a user is not logged in, the user will see a Register Now button as a Call To Action to register on the website. 
@@ -134,10 +142,27 @@
 
 ![Items](documentation/images/Register.png)
 
--   ### HOW IT WORKS PAGE
+-   ### F12 HOW IT WORKS PAGE
 
     - If a user is not logged in, the user will see a Register Now button as a Call To Action to register on the website. 
     - If the user is logged in, the Register Now button will not be displayed
+
+-   ### F13 Edit function
+
+    - If a user is logged in and has created a furniture post, they can edit it by clicking the edit button on the specific item detail page
+    - The user will see a success message once they have submitted the edit form
+
+-   ### F14 Delete function
+
+    - If a user is logged in and has created a furniture post, they can delete it by clicking the edit button on the specific item detail page. 
+    - The user will be asked to verify if they are sure they want to delete.
+
+-   ### F15 AllAuth pages
+
+    - In order for a user to be able create, read, edit and delete furniture posts as well as comment on items, they will need to register on the site and be signed.
+    - The sign in, sign up and logout allauth pages have been styled using crispy forms
+
+
 
 
 #### Future Features
@@ -164,20 +189,41 @@
 
 ### Languages Used
 
-
-
-### Python Modules
-
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Jquery](https://jquery.com/)
+-   [Python](https://www.python.org/)
 
 
 ### Frameworks, Libraries & Programs Used
 
+-   [Google Fonts:](https://fonts.google.com/) used for the Libre Baskerville and DM Sans fonts.
+-   [Font Awesome:](https://fontawesome.com/) was used to add social network icons.
+-   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+-   [GitHub:](https://github.com/) is used as the respository for the project code after being pushed from Git. GitHub projects was use to set up a Kanban board to facilitate the Agile development standards.
+-   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
+-   [Django](https://www.djangoproject.com/) was used as the framework 
+-   [Bootstrap](https://getbootstrap.com/) was used to build responsive web pages
+-   [Gunicorn](https://gunicorn.org/) was used as the Web Server to run Django on Heroku
+-   [dj_database_url](https://pypi.org/project/dj-database-url/) library used to allow database urls to connect to the postgres db
+-   [psycopg2](https://pypi.org/project/psycopg2/) database adapter used to support the connection to the postgres db
+-   [Cloudinary](https://cloudinary.com/) used to store the images used by the application
+-   [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html) used for account registration and authentication
+-   [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to simplify form rendering
+-   [Django Pillow](https://pypi.org/project/Pillow/) to enable image processing capabilities
 
     
 ## Testing
 
-### Manual Test Cases and Results
+### Manual Testing Test Cases and Results
 
+- The link below details the test cases that were used and the results and relates back to the website Features
+  
+    <details>
+        <summary>Manual testing</summary>
+
+        ![Testing](documentation/testing/testing-ffh-v3.pdf)
+    </details>
 
 
  ### Automated Validator Testing
