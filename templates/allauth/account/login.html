@@ -5,7 +5,7 @@
 {% block title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container text-center">
+<div class="container text-center logout">
   <h1>{% trans "Sign In" %}</h1>
 
   <p>{% blocktrans %}If you have not created an account yet, then please
@@ -21,5 +21,10 @@
     <a class="button secondaryAction d-block"
       href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </form>
+  <div>
+<p class="text-center"><strong>Reduce. Reuse. Reimagine.
+  <br>The Free Furniture Hub - Empowering furniture philanthropy, one post at a time!</strong></p>
 </div>
+</div>
+
 {% endblock %}

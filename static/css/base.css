@@ -233,6 +233,14 @@ a.img-container:hover {
     border-color: #768DC3;
 }
 
+.logout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
 /* Footer */
 
 footer {
