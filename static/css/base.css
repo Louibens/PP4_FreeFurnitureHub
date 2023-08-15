@@ -146,11 +146,6 @@ img.logo {
     justify-content: center;
 }
 
-.furniture-container {
-    display: flex;
-    flex-direction: column;
-}
-
 .description .furniture-detail {
     width: 100%
 }
@@ -241,6 +236,29 @@ a.img-container:hover {
 
 }
 
+/* .desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.comment {
+    width: 80%;
+} */
+
+.furniture_item-pic {
+    max-width: 380px;
+}
+
+.furniture-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+}
+
+
 /* Footer */
 
 footer {
@@ -314,6 +332,20 @@ footer {
 .tffh_logo {
     font-size: 24px;
 }
+
+.furniture-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 }
 
 @media screen and (max-width: 990px) {

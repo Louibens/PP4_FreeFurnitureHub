@@ -6,12 +6,13 @@
 
 {% load crispy_forms_tags %}
 
-<div class="container">
-    <div class="furniture-info mt-3 p-1">
+
+
+    <div class="furniture-info mt-3 p-1 mx-auto desc">
         <div class="furniture-img">
             <img src="{{ furniture_post.image.url }}" alt="{{ furniture_post.image_alt }}" class="furniture_item-pic">
         </div>
-        <div class="furniture-detail">
+        <div class="col-md-8 mb-4 mt-3 mx-auto px-4">
             <h1 class="text-center">{{ furniture_post.title }}</h1>
             <p class="text-center">Posted by {{furniture_post.user.username.title}} on {{furniture_post.posted_date}}
             </p>
@@ -19,24 +20,26 @@
             <p><strong>County: </strong>{{furniture_post.county.title}}</p>
             <p><strong>Town: </strong>{{furniture_post.town.title}}</p>
             <p><strong>Condition: </strong>{{furniture_post.condition}}</p>
+            <div class="description">
+                <h2>Description</h2>
+                <p>{{ furniture_post.description|safe }}</p>
+            </div>
 
+        </div>
 
-        </div>
-    </div>
-    <div class="furniture-container">
-        <div class="description">
-            <h2>Description</h2>
-            <p>{{ furniture_post.description|safe }}</p>
-        </div>
-        {% if request.user == furniture_post.user %}
-        <div class="text-center user_btns">
-            <a href="{% url 'edit_furniture' furniture_post.id %}" class="btn buttons w-25">Edit</a>
-            <a href="{% url 'delete_furniture' furniture_post.id %}" class="btn buttons w-25">Delete</a>
-        </div>
-        {% endif %}
+    </div>            
+    {% if request.user == furniture_post.user %}
+            <div class="text-center user_btns">
+                <a href="{% url 'edit_furniture' furniture_post.id %}" class="btn buttons w-25">Edit</a>
+                <a href="{% url 'delete_furniture' furniture_post.id %}" class="btn buttons w-25">Delete</a>
+            </div>
+            {% endif %}
+   
+        
         <!-- Comment box -->
 
-        <div class="row">
+        <div class="furniture-info col-md-8 mb-4 mt-3 mx-auto px-4">
+             
             <div class="col-md-8 mb-4 mt-3 ">
                 <h3>Comments:</h3>
                 <div class="card-body">
@@ -87,5 +90,7 @@
         </div>
 
     </div>
+    <p class="text-center"><strong>Reduce. Reuse. Reimagine.
+        <br>The Free Furniture Hub - Empowering furniture philanthropy, one post at a time!</strong></p>
 </div>
 {% endblock %}
