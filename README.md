@@ -255,8 +255,57 @@
 
  ### Automated Validator Testing
 
+ #### HTML Validation
 
- ### Lighthouse
+ - W3C Validator flagged an issue with an 'a' element surrounding a 'button' element. Removed button element and just use anchor tag for the Register Now button
+
+    - Results for homepage
+      - <details>
+        <summary>Home Page</summary>
+
+        ![Home Page](documentation/testing/homepage_html_validation.png)
+      </details>
+
+        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/homepage_html_validation.png" target="_blank">Home Page</a>
+
+
+    - Results for Offers
+      - <details>
+        <summary>Offers Page</summary>
+
+        ![Home Page](documentation/testing/offers_html_validation.png)
+      </details>
+
+        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/offers_html_validation.png" target="_blank">Offers Page</a>
+
+    - Results for How It Works
+      - <details>
+        <summary>How It Works Page</summary>
+
+        ![Home Page](documentation/testing/how_html_validation.png)
+      </details>
+
+        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/how_html_validation.png" target="_blank">How It Works Page</a>
+
+    - Results for Detail page
+      - <details>
+        <summary>Detail Page</summary>
+
+        ![Home Page](documentation/testing/detail_html_validation.png)
+      </details>
+
+        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/detail_html_validation.png" target="_blank">Detail Page</a>
+
+    - Results for My Items page
+      - <details>
+        <summary>My Items Page</summary>
+
+        ![Home Page](documentation/testing/my_items_html_validation.png)
+      </details>
+
+        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/my_items_html_validation.png" target="_blank">My Items Page</a>
+
+ #### Lighthouse
  
  - I used Lighthouse within the Chrome Developer Tools to allow me to test the performance, accessibility, best practices and SEO of the website.
 
