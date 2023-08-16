@@ -16,15 +16,10 @@
 
 ## Planning
 
-- Link to Github Project board that User Storires were added and managed from [Free Furniture Agile Tool](https://github.com/users/Louibens/projects/4/views/1)
-- The User Stories have acceptance criteria and labels to show whether the requirement was Must Have, Should Have, Won't have.
-- 2 User Stories that were not implemented as part of this sprint have been added to a Next iteration column/channel and have been captured in the Future Features section below.
-
 - The ideal user is:
 
   - anyone who is interested in sourcing items free of cost or anyone interested in posting an item to offer to avoid the item going to landfill and help someone else who needs it.
  
-
 - Site goals:
 
   - To provide users with a platform to advertise items that want to offer free of charge
@@ -37,6 +32,15 @@
   - The diagram visually represents how the database models are connected
 
 ![Database](documentation/images/model_diagram.png)
+
+- Agile Kanban board
+    - Link to Github Project board that User Storires were added and managed from [Free Furniture Agile Tool](https://github.com/users/Louibens/projects/4/views/1)
+    - The User Stories have acceptance criteria and labels to show whether the requirement was Must Have, Could Have, Won't have.
+    - 2 User Stories that were not implemented as part of this sprint have been added to a Next iteration column/channel and have been captured in the Future Features section below.
+
+    - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/images/kanban.png" target="_blank">Kanban Board</a>
+
+    - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/images/1page.pdf" target="_blank">EPIC/USER STORIES/TASKS</a>
 
 ## User Experience (UX)
 
@@ -128,6 +132,8 @@
     - User can see comments that have been added by other uses but can only add a comment if they are logged in. The user will be asked to Register or Sign In to add a comment.
     - The comments section will be used by users to arrange to have the item of furniture collected or ask questions.
 
+![Items](documentation/images/comments.png)
+
 -   ### F10 MY ITEMS
 
     - If a user has posted items and is logged in, they will have a My Items page added that they can navigate to via a link in the nav bar
@@ -144,26 +150,34 @@
 
 -   ### F12 HOW IT WORKS PAGE
 
-    - If a user is not logged in, the user will see a Register Now button as a Call To Action to register on the website. 
-    - If the user is logged in, the Register Now button will not be displayed
+    - This page is for information for the user on how to use the site. It has been designed in line with the home page.
 
--   ### F13 Edit function
+![Items](documentation/images/how_it_works.png) 
+
+-   ### F13 EDIT FUNCTION
 
     - If a user is logged in and has created a furniture post, they can edit it by clicking the edit button on the specific item detail page
     - The user will see a success message once they have submitted the edit form
 
--   ### F14 Delete function
+![Items](documentation/images/update_success.png)
+
+-   ### F14 DELETE FUNCTION
 
     - If a user is logged in and has created a furniture post, they can delete it by clicking the edit button on the specific item detail page. 
-    - The user will be asked to verify if they are sure they want to delete.
+    - The user will be asked to verify if they are sure they want to delete and then will see a success message when the action is complete.
+
+![Items](documentation/images/delete_success.png)
 
 -   ### F15 AllAuth pages
 
     - In order for a user to be able create, read, edit and delete furniture posts as well as comment on items, they will need to register on the site and be signed.
     - The sign in, sign up and logout allauth pages have been styled using crispy forms
+    - If the user registers or logs in, they will get a success message to confirm.
 
+![Items](documentation/images/register_form.png)
+![Items](documentation/images/login_success.png)
 
-#### Future Features
+## Future Features
 
 -   ### Filtering
 
@@ -193,6 +207,7 @@
 
 -   ### Imagery
 
+    - Images were sourced from pexels.com or photos have been taken personally to be added to the website
 
 
 -   ### Colour
@@ -235,31 +250,45 @@
 ### Manual Testing Test Cases and Results
 
 - The link below details the test cases that were used and the results and relates back to the website Features
-  
-    <details>
-        <summary>Manual testing</summary>
 
-![Testing](documentation/testing/testing-ffh-v3.pdf)
-    </details>
-
+    - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/images/testing/testing-ffh-v3.pdf" target="_blank">Manual Testing</a>
 
  ### Automated Validator Testing
 
 
+ ### Lighthouse
+ 
+ - I used Lighthouse within the Chrome Developer Tools to allow me to test the performance, accessibility, best practices and SEO of the website.
+
+    - Desktop
+
+![Items](documentation/images/lighthouse-desktop.png)
+
+  - Mobile
+
+![Items](documentation/images/lighthouse-mob.png)
 
  ### Additional Testing Comments
 
+- Testing has been carried out on the following browsers :
+
+    - Chrome Version 115.0.5790.173 (Official Build) (64-bit)
+    - Firefox Version 116.0.2 (64-bit)
+    - Edge Version 115.0.1901.203 (Official build) (64-bit)
+
+- Testing has also been carried out on desktop, laptop and smartphone for a variety of screen sizes.
 
 ## Deployment
 
 Detailed below are instructions on how to clone this project repository and the steps to configure and deploy the application.  
 
 1. How to Clone the Repository
-2. Create Application and Postgres DB on Heroku
-3. Configure Cloudinary to host images used by the application
-4. Connect the Heroku app to the GitHub repository
-5. Executing automated tests
-6. Final Deployment steps
+2. How to Fork the Repository
+3. Create Application and Postgres DB on Heroku
+4. Configure Cloudinary to host images used by the application
+5. Connect the Heroku app to the GitHub repository
+6. Executing automated tests
+7. Final Deployment steps
 
 ### How to Clone the Repository 
 
@@ -279,7 +308,7 @@ Detailed below are instructions on how to clone this project repository and the 
 
 ### How to fork the repository
 
-- Go to the https://github.com/Louibens/ms1-Sustainability_Ireland repository on GitHub 
+- Go to the https://github.com/Louibens/PP4_FreeFurnitureHub repository on GitHub 
 - Click the "Fork" button in the top right corner
 
 ### Create Application and Postgres DB on Heroku
@@ -333,9 +362,9 @@ Once code changes have been completed and tested on localhost, the application c
 
 ### Code research
 
- - Researched how to add the Delete success message as the transition page to confirm user wants to delete was causing an issue - Solution found on stackoverflow - https://stackoverflow.com/questions/47636968/django-messages-for-a-successfully-delete-add-or-edit-item
- - The Recipe Sharing website tutorial helped me to code a lot of the Free Furniture Hub - https://www.youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy
- - The django messages were researched here - https://docs.djangoproject.com/en/4.2/ref/contrib/messages/
+ - Researched how to add the Delete success message as the transition page to confirm user wants to delete was causing an issue - Solution found on stackoverflow - [stackoverflow](https://stackoverflow.com/questions/47636968/django-messages-for-a-successfully-delete-add-or-edit-item)
+ - The Recipe Sharing website tutorial helped me to code a lot of the Free Furniture Hub - [Recipe Tutorial](https://www.youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy)
+ - The django messages were researched here - [Messages Framework](https://docs.djangoproject.com/en/4.2/ref/contrib/messages/)
 
 ### Acknowledgements
 

@@ -6,8 +6,6 @@
 
 {% load crispy_forms_tags %}
 
-
-
 <div class="furniture-info mt-3 p-1 mx-auto desc">
     <div class="furniture-img">
         <img src="{{ furniture_post.image.url }}" alt="{{ furniture_post.image_alt }}" class="furniture_item-pic">
@@ -24,9 +22,7 @@
             <h2>Description</h2>
             <p>{{ furniture_post.description|safe }}</p>
         </div>
-
     </div>
-
 </div>
 {% if request.user == furniture_post.user %}
 <div class="text-center user_btns">
@@ -35,8 +31,7 @@
 </div>
 {% endif %}
 
-
-<!-- Comment box -->
+<!-- Comment post box -->
 
 <div class="furniture-info col-md-8 mb-4 mt-3 mx-auto px-4">
 
@@ -46,27 +41,24 @@
             {% if not furniture_post.comments.all %}
             No Comments Yet...
             {% else %}
-            <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
             {% for comment in comments %}
             <div class="comments" style="padding: 10px;">
                 <p class="font-weight-bold">
-                    <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                     {{ comment.name.title }}
                     <span class=" text-muted font-weight-normal">
-                        <!-- The comment's created date goes here -->
                         {{ comment.created_on }}
                     </span> wrote:
                 </p>
-                <!-- The body of the comment goes before the | -->
                 {{ comment.message | linebreaks }}
             </div>
-            <!-- Our for loop ends here -->
             {% endfor %}
             {% endif %}
         </div>
     </div>
     <div class="col-md-4 mb-4  mt-3 ">
         <div class="card-body">
+
+            <!-- Create Comment box -->
 
             {% if user.is_authenticated %}
 
@@ -88,6 +80,7 @@
     </div>
 </div>
 <p class="text-center"><strong>Reduce. Reuse. Reimagine.
-        <br>The Free Furniture Hub - Empowering furniture philanthropy, one post at a time!</strong></p>
+    <br>The Free Furniture Hub - Empowering furniture philanthropy, one post at a time!</strong>
+</p>
 
 {% endblock %}

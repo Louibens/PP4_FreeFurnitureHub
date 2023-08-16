@@ -5,12 +5,11 @@
 
 {% block content %}
 
-
 <div class="container flex-column pt-3">
     <section class="text-center">
         <h1 class="main-title mx-auto">Welcome to the Free Furniture Hub: </h1>
         <h2>Where Giving Furniture a New Home is a Breeze!</h2>
-        <p class="pt-2">
+        <div class="pt-2">
             Hey there, furniture enthusiasts, and eco-warriors alike!
             <br>
             Are you tired of seeing perfectly good furniture pieces being discarded and ending up in landfills?
@@ -22,11 +21,10 @@
             {% if request.user.is_authenticated %}
             {% else %}
             <br>
-            <a href="/accounts/signup/"><button type="submit" class="btn buttons mt-2"
-                    aria-label="Register Now Button">Register Now</button></a>
+            <a href="/accounts/signup/" class="btn buttons mt-2" aria-label="Register Now Button">Register Now</a>
             {% endif %}
             <hr>
-
+        </div>
     </section>
     <section>
         <div class="text-center">
@@ -64,8 +62,8 @@
             sustainability. Our mission is simple yet powerful: to provide a platform where you can easily post pictures
             and details of furniture items you wish to give away to those in need. It's time to bid farewell to the era
             of needless waste and embrace the joy of sharing and reusing!
-            <hr>
         </p>
+        <hr>
         <h4 class="text-center pt-3 purple-line"><strong>Sustainably Stylish</strong></h4>
         <br>
         <p class="text-center why">When you share your furniture on The Free Furniture Hub, you become a sustainability
@@ -76,7 +74,7 @@
         </p>
         <h4 class="text-center pt-3 purple-line"><strong>Community Connections</strong></h4>
         <br>
-        <p class="text-center why"></p>The Free Furniture Hub is more than just a website; it's a thriving community of
+        <p class="text-center why">The Free Furniture Hub is more than just a website; it's a thriving community of
         like-minded individuals
         who care about sustainability and want to make a difference. Through our platform, you have the opportunity
         to connect with people who appreciate the value of giving and receiving, fostering a warm and caring network
