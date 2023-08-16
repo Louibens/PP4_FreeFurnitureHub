@@ -114,6 +114,10 @@ class DeleteFurniture(LoginRequiredMixin, UserPassesTestMixin,
     success_url = '/furniture/'
     success_message = "Your post was deleted successfully"
 
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteFurniture, self).delete(request, *args, **kwargs)
+
     def test_func(self):
         return self.request.user == self.get_object().user
 
