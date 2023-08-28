@@ -31,6 +31,7 @@ class FurnitureItems(ListView):
     template_name = "furniture/furniture_items.html"
     model = Furniture
     context_object_name = "furniture_items"
+    paginate_by = 12
 
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
