@@ -35,12 +35,17 @@
 
 - Agile Kanban board
     - Link to Github Project board that User Storires were added and managed from [Free Furniture Agile Tool](https://github.com/users/Louibens/projects/4/views/1)
-    - The User Stories have acceptance criteria and labels to show whether the requirement was Must Have, Could Have, Won't have.
+    - The User Stories have acceptance criteria, tasks and labels to show whether the requirement was Must Have, Could Have, Won't have.
     - 2 User Stories that were not implemented as part of this sprint have been added to a Next iteration column/channel and have been captured in the Future Features section below.
 
     - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/images/kanban.png" target="_blank">Kanban Board</a>
 
-    - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/images/1page.pdf" target="_blank">EPIC/USER STORIES/TASKS</a>
+    <details>
+    <summary>EPIC/USER STORIES/TASKS</summary>
+
+    ![EPIC/USER STORIES/TASKS](documentation/images/1page.png)
+    </details>
+    
 
 ## User Experience (UX)
 
@@ -201,6 +206,25 @@
 
 ## Design
 
+-   ### Wireframes
+    - The wireframe diagrams show how the site was designed for desktop, mobile and table for the homepage, offers page, Create a post page, Furniture Detail page, How it Works page and My Items pages
+
+    <details>
+    <summary>Desktop Wireframes</summary>
+
+    ![Desktop Wireframes](documentation/wireframes/desktop_wireframes.png)
+    </details>
+    <details>
+    <summary>Tablet Wireframes</summary>
+
+    ![Tablet Wireframes](documentation/wireframes/tablet_wireframes.png)
+    </details>
+    <details>
+    <summary>Smartphone Wireframes</summary>
+
+    ![Smartphone Wireframes](documentation/wireframes/mobile_wireframes.png)
+    </details>
+
 -   ### Title/Logo
     - The company logo incorporates furniture shapes to emphasise what the website is about. The company name is positioned to the right of the logo using DM Sans font from GoogleFonts. This was selected as an easy to read and accessible font.
     - The logo was created on freelogodesign.org website. 
@@ -249,9 +273,13 @@
 
 ### Manual Testing Test Cases and Results
 
-- The link below details the test cases that were used and the results and relates back to the website Features
+- The below details the test cases that were used and the results and relates back to the website Features
 
-    - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/images/testing/testing-ffh-v3.pdf" target="_blank">Manual Testing</a>
+    <details>
+    <summary>Manual Testing</summary>
+
+    ![Manual Testing](documentation/testing/testing-ffh-v3%20(1).png)
+    </details>
 
  ### Automated Validator Testing
 
@@ -311,11 +339,11 @@
 
     - Desktop
 
-![Items](documentation/images/lighthouse-desktop.png)
+![Items](documentation/testing/lighthouse_desktop.png)
 
   - Mobile
 
-![Items](documentation/images/lighthouse-mob.png)
+![Items](documentation/testing/lighthouse_mob.png)
 
  ### Additional Testing Comments
 
