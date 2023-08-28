@@ -294,8 +294,6 @@
         ![Home Page](documentation/testing/homepage_html_validation.png)
       </details>
 
-        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/homepage_html_validation.png" target="_blank">Home Page</a>
-
 
     - Results for Offers
       - <details>
@@ -304,34 +302,39 @@
         ![Home Page](documentation/testing/offers_html_validation.png)
       </details>
 
-        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/offers_html_validation.png" target="_blank">Offers Page</a>
-
     - Results for How It Works
       - <details>
         <summary>How It Works Page</summary>
 
-        ![Home Page](documentation/testing/how_html_validation.png)
+        ![How it works Page](documentation/testing/how_html_validation.png)
       </details>
-
-        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/how_html_validation.png" target="_blank">How It Works Page</a>
 
     - Results for Detail page
       - <details>
         <summary>Detail Page</summary>
 
-        ![Home Page](documentation/testing/detail_html_validation.png)
+        ![Detail Page](documentation/testing/detail_html_validation.png)
       </details>
-
-        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/detail_html_validation.png" target="_blank">Detail Page</a>
 
     - Results for My Items page
       - <details>
         <summary>My Items Page</summary>
 
-        ![Home Page](documentation/testing/my_items_html_validation.png)
+        ![My Items page](documentation/testing/my_items_html_validation.png)
       </details>
 
-        - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/testing/my_items_html_validation.png" target="_blank">My Items Page</a>
+ #### HTML Validation
+
+ - No issues flagged during CSS validation
+
+    - Results for base.css
+      - <details>
+        <summary>base.css</summary>
+
+        ![base.css](documentation/testing/css_validation.png)
+      </details>
+
+
 
  #### Lighthouse
  
