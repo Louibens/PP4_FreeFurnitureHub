@@ -202,6 +202,10 @@ a.img-container:hover {
     margin-bottom: 0.2rem;
 }
 
+.card-img-top {
+    box-shadow: var(--small-box-shadow);
+}
+
 .centered {
     width: 100%;
     background-color: var(--blue);
@@ -239,22 +243,12 @@ a.img-container:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
-
-/* .desc {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 80%;
-}
-
-.comment {
-    width: 80%;
-} */
 
 .furniture_item-pic {
     max-width: 380px;
+    box-shadow: var(--small-box-shadow);
+    border-radius: 5px;
 }
 
 .furniture-info {
