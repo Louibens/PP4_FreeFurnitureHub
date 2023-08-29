@@ -2,6 +2,8 @@
 
 [View the live project here](https://free-furniture-hub-10db98e468e6.herokuapp.com/)
 
+**The Free Furniture Hub** is a website that aims to reduce the amount of usable furniture that goes to landfill. It enables users to upload a photo of an item of furniture that they no longer want and would like to give away free of charge. Another user can then log in and comment on an item of furniture in order to arrange for that item to be collected.
+
 ![AmIResponsive](documentation/images/amiresponsive.png)
 
 ## Index – Table of Contents
@@ -29,9 +31,13 @@
 
 - Model diagram
 
-  - The diagram visually represents how the database models are connected
+  - The below diagram visually represents how the database models are connected
+    <details>
+    <summary>Model Diagram</summary>
 
-![Database](documentation/images/model_diagram.png)
+    ![Database](documentation/images/model_diagram.png)
+    </details>
+
 
 - Agile Kanban board
     - Link to Github Project board that User Storires were added and managed from [Free Furniture Agile Tool](https://github.com/users/Louibens/projects/4/views/1)
@@ -74,7 +80,7 @@
  -  ### F02 NAV BAR
 
     - The navigation menu links displayed will vary on whether a user is logged in and if they have posted items to the site.
-    - When a user is logged in they will be able see their username in the nav bar so they can easily see that they are logged in.
+    - When a user is logged in they will be able see their username beside the search box so they can easily see that they are logged in. Unless they are on a small mobile device as a design decision was reached to remove username to avoid pushing content lower on the page. 
     - If a user is not logged in they will be able to view all items and comments but will be unable to create a post or comment on posts.
     - If a user has not created any posts, they will not see the My Items page.
     - The nav bar will also display a link to the Admin panel if the admin user is logged in.
@@ -100,7 +106,7 @@
 
 -   ### F04 RECENTLY POSTED
 
-    - 3 recently posted items are displayed on the home page to give users and indication of what they can find on the site.
+    - 3 recently posted items are displayed on the home page to give users an indication of what they can find on the site.
     - Users can click on them and view the specific items details.
 
 ![Recently Posted](documentation/images/recently_posted.png)
@@ -121,6 +127,7 @@
 
     - Full listing of all furniture items that have been posted (and not deleted) on separate cards. 
     - Each card displays an image of the item, title, location, posted date and snippet of the item description
+    - The page will show 12 furniture items and the user can click the Next button to see the next 12
 
 ![Items](documentation/images/furniture_items.png)
 
@@ -168,7 +175,7 @@
 
 -   ### F14 DELETE FUNCTION
 
-    - If a user is logged in and has created a furniture post, they can delete it by clicking the edit button on the specific item detail page. 
+    - If a user is logged in and has created a furniture post, they can delete it by clicking the delete button on the specific item detail page. 
     - The user will be asked to verify if they are sure they want to delete and then will see a success message when the action is complete.
 
 ![Items](documentation/images/delete_success.png)
@@ -273,7 +280,9 @@
 
 ### Manual Testing Test Cases and Results
 
-- The below details the test cases that were used and the results and relates back to the website Features
+- The below table details the test cases that were used and the results and relates back to the website Features
+- There is also a "FAILED tests now fixed" section outlining the tests that failed, how they were fixed and the relevant commit reference
+- Click the table to enlarge for better readability
 
     <details>
     <summary>Manual Testing</summary>
@@ -323,7 +332,7 @@
         ![My Items page](documentation/testing/my_items_html_validation.png)
       </details>
 
- #### HTML Validation
+ #### CSS Validation
 
  - No issues flagged during CSS validation
 
@@ -334,7 +343,74 @@
         ![base.css](documentation/testing/css_validation.png)
       </details>
 
+ #### JS Validation
 
+ - No issues flagged during JS validation
+
+  <details>
+    <summary>JS HINT</summary>
+
+  ![JS Hint](documentation/testing/jshint.png)
+  </details>
+
+
+ #### Python Validation
+
+ - No issues flagged during Python validation
+
+  <details>
+    <summary>Project settings.py</summary>
+
+  ![Main settings.py](documentation/testing/main_settings.py.png)
+  </details>
+
+  <details>
+    <summary>Project urls.py</summary>
+
+  ![Main urls.py](documentation/testing/main_urls.py.png)
+  </details>
+
+  <details>
+  <summary>Home app urls.py</summary>
+
+  ![Home urls.py](documentation/testing/home_app_urls.py.png)
+  </details>
+
+  <details>
+  <summary>Home app views.py</summary>
+
+  ![Home views.py](documentation/testing/home_app_views.py.png)
+  </details>
+
+  <details>
+  <summary>Furniture app views.py</summary>
+
+  ![Furniture views.py](documentation/testing/furniture_app_views.py.png)
+  </details>
+
+  <details>
+  <summary>Furniture app urls.py</summary>
+
+  ![Furniture urls.py](documentation/testing/furniture_app_urls.py.png)
+  </details>
+
+  <details>
+  <summary>Furniture app models.py</summary>
+
+  ![Furniture models.py](documentation/testing/furniture_app_models.py.png)
+  </details>
+
+  <details>
+  <summary>Furniture app forms.py</summary>
+
+  ![Furniture forms.py](documentation/testing/furniture_app_forms.py.png)
+  </details>
+
+  <details>
+  <summary>Furniture app admin.py</summary>
+
+  ![Furniture admin.py](documentation/testing/furniture_app_admin.py.png)
+  </details>
 
  #### Lighthouse
  
@@ -360,7 +436,7 @@
 
 ## Deployment
 
-Detailed below are instructions on how to clone this project repository and the steps to configure and deploy the application.  
+Detailed below are instructions on how to clone and fork this project repository and the steps to configure and deploy the application.  
 
 1. How to Clone the Repository
 2. How to Fork the Repository
@@ -448,4 +524,7 @@ Once code changes have been completed and tested on localhost, the application c
 
 ### Acknowledgements
 
-
+- Thanks goes to my family who have given me the time and space to learn a lot during the building of this project. I am proud of what I have achieved thanks to their patience and understanding.
+- My mentor, Elaine Roche, has been great as always, guiding and inspiring me throughout the epic journey. 
+- I also reached out on the Peer Review Slack Channel and got some good feedback, some of which I implemented, so thanks to the Code Institute for providing a great network of great people including Allen Gleeson who replied with his feedback.
+- I used Tutor Support a few times during this project and would like to thank them for their patience and support when I was having my low moments trying to get things working.
