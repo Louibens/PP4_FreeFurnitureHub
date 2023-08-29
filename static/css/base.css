@@ -42,17 +42,18 @@ main {
 .navbar {
     background-color: var(--off-white) !important;
     box-shadow: var(--small-box-shadow) !important;
-
 }
 
 .navbar-brand {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .tffh_logo {
     font: var(--main-font);
     font-size: 1.8rem;
+    margin-left: 5px
 }
 
 .nav-link {
@@ -80,6 +81,11 @@ img.logo {
     display: flex;
     flex-direction: column;
     justify-content: end !important;
+}
+
+.nav-link:hover {
+color: rgba(0,0,0) !important;
+text-shadow: 0px 0px 13px black !important;
 }
 
 .s-box {
