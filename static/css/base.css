@@ -133,6 +133,7 @@ img.logo {
 .card {
     height: 90%;
     margin-top: 1rem;
+    box-shadow: var(--small-box-shadow);
 }
 
 .furniture {
@@ -198,10 +199,6 @@ a.img-container:hover {
 
 .card-text {
     margin-bottom: 0.2rem;
-}
-
-.card-img-top {
-    box-shadow: var(--small-box-shadow);
 }
 
 .centered {
