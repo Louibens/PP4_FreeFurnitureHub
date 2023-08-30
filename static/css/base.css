@@ -194,6 +194,11 @@ a.img-container {
     text-decoration: none;
     border: 1px solid var(--border);
     box-shadow: var(--small-box-shadow);
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
 }
 
 a.img-container:hover {
@@ -201,8 +206,8 @@ a.img-container:hover {
 }
 
 .img-container img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
 }
 
 .card-body {
