@@ -20,7 +20,7 @@
 
 - The ideal user is:
 
-  - anyone who is interested in sourcing items free of cost or anyone interested in posting an item to offer to avoid the item going to landfill and help someone else who needs it.
+  - anyone who is interested in sourcing furniture items free of cost or anyone interested in posting an item of furniture to offer to avoid the item going to landfill and help someone else who needs it.
  
 - Site goals:
 
@@ -44,7 +44,11 @@
     - The User Stories have acceptance criteria, tasks and labels to show whether the requirement was Must Have, Could Have, Won't have.
     - 2 User Stories that were not implemented as part of this sprint have been added to a Next iteration column/channel and have been captured in the Future Features section below.
 
-    - <a href="https://github.com/Louibens/PP4_FreeFurnitureHub/blob/main/documentation/images/kanban.png" target="_blank">Kanban Board</a>
+    <details>
+    <summary>Kanban Board</summary>
+
+    ![Kanban](documentation/images/kanban.png)
+    </details>
 
     <details>
     <summary>EPIC/USER STORIES/TASKS</summary>
@@ -80,7 +84,7 @@
  -  ### F02 NAV BAR
 
     - The navigation menu links displayed will vary on whether a user is logged in and if they have posted items to the site.
-    - When a user is logged in they will be able see their username beside the search box so they can easily see that they are logged in. Unless they are on a small mobile device as a design decision was reached to remove username to avoid pushing content lower on the page. 
+    - When a user is logged in they will be able see their username beside the navigation links. 
     - If a user is not logged in they will be able to view all items and comments but will be unable to create a post or comment on posts.
     - If a user has not created any posts, they will not see the My Items page.
     - The nav bar will also display a link to the Admin panel if the admin user is logged in.
