@@ -19,10 +19,10 @@ class FurnitureForm(forms.ModelForm):
             "condition",
         ]
 
-        description = forms.CharField()
-
-        widget = {
+        widgets = {
             "description": forms.Textarea(attrs={"rows": 5}),
+            "title": forms.TextInput(attrs={'placeholder': 'Enter 15 '
+                                            'characters max'}),
         }
 
         labels = {
