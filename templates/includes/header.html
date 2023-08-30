@@ -48,7 +48,12 @@
               <a class="nav-link {% if url_name == 'add_furniture' %}active{% endif %}"
                 href="{% url 'add_furniture' %}">Create post</a>
             </li>
-
+            {% if request.user.is_authenticated and request.user.furniture_owner.count > 0 %}
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'my_items' %}active{% endif %}" href="{% url 'my_items' %}">My
+                Items</a>
+            </li>
+            {% endif %}
             <li class="nav-item">
               <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}"
                 href="/accounts/logout/">Logout</a>
@@ -63,32 +68,22 @@
                 href="/accounts/login/">Login</a>
             </li>
             {% endif %}
-            {% if request.user.is_authenticated and request.user.furniture_owner.count > 0 %}
-            <li class="nav-item">
-              <a class="nav-link {% if url_name == 'my_items' %}active{% endif %}" href="{% url 'my_items' %}">My
-                Items</a>
+            {% if user.is_authenticated %}
+            <li class="user">
+              <i class="far fa-user"></i> {{ user.username.title|truncatechars:25 }}
             </li>
             {% endif %}
           </ul>
         </div>
         <div class="container-fluid me-auto nav-cont desktop-display">
-          <!-- Display username on desktop and tablet -->
-          {% if user.is_authenticated %}
-          <span class="user">
-            <i class="far fa-user"></i> {{ user.username.title|truncatechars:25 }}
-          </span>
-          {% endif %}
           <!-- Form for search box -->
           <form class="d-flex s-box" role="search" method="GET" action="{% url 'furniture_items' %}">
             <input class="form-control search me-2" name="q" type="search" placeholder="Search furniture"
               aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
-
         </div>
-
       </div>
-
     </div>
   </nav>
   <!-- Alert messaging -->
@@ -96,7 +91,6 @@
     <div class="row">
       <div class="col-md-8 offset-md-2">
         {% for message in messages %}
-
         <div class="alert {{ message.tags }} alert_dismissable fade show" id="msg" role="alert">
           {{ message | safe }}
           <button type="button" class="btn-close" data_bs_dismiss="alert" aria-label="Close"></button>
@@ -112,12 +106,6 @@
       <input class="form-control search me-2" name="q" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-primary" type="submit">Search</button>
     </form>
-    <!-- Display username for mobile display. Name truncated -->
-    {% if user.is_authenticated %}
-    <span class="user">
-      <i class="far fa-user"></i> {{ user.username.title|truncatechars:12  }}
-    </span>
-    {% endif %}
   </div>
   <!-- Javascript for Alerts -->
   <script>

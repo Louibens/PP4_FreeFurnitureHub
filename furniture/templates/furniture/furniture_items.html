@@ -11,7 +11,7 @@
 
   {% for furniture in furniture_items %}
   <a href="{% url 'furniture_detail' furniture.id %}" class="furniture" aria-label="Click to view {{furniture.title}}">
-    <div class="card m-3" style="width: 18rem;">
+    <div class="card m-3">
       <img class="card-img-top" src="{{furniture.image.url}}" alt="{{furniture.image_alt}}" style="height:75%">
       <div class="card-body">
         <h3 class="card-title">{{furniture.title.title}}</h3>
