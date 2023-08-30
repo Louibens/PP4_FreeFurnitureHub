@@ -134,10 +134,19 @@ img.logo {
 /* Furniture */
 
 .card {
+    width: 18rem;
     height: 90%;
-    margin-top: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
     box-shadow: var(--small-box-shadow);
-    width: 18rem
+}
+
+.card-img-top {
+    height: 100%;
+    width: auto;
 }
 
 .furniture {
@@ -373,5 +382,9 @@ footer {
 
     .tffh_logo {
         font-size: 18px;
+    }
+
+    .furniture_item-pic {
+        max-width: 320px;
     }
 }

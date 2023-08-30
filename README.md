@@ -521,7 +521,8 @@ Once code changes have been completed and tested on localhost, the application c
  - Researched how to add the Delete success message as the transition page to confirm user wants to delete was causing an issue - Solution found on stackoverflow - [stackoverflow](https://stackoverflow.com/questions/47636968/django-messages-for-a-successfully-delete-add-or-edit-item)
  - The Recipe Sharing website tutorial helped me to code a lot of the Free Furniture Hub - [Recipe Tutorial](https://www.youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy)
  - The django messages were researched here - [Messages Framework](https://docs.djangoproject.com/en/4.2/ref/contrib/messages/)
-  - Django add placeholder text to form field was researched on Stackoverflow - [Placeholder](https://stackoverflow.com/questions/44133562/django-add-placeholder-text-to-form-field)
+ - Django add placeholder text to form field was researched on Stackoverflow - [stackoverflow](https://stackoverflow.com/questions/44133562/django-add-placeholder-text-to-form-field)
+ - Resolved some images being skewed on the Offers page following research on Stackoverflow - [stackoverflow](https://stackoverflow.com/questions/10830735/center-image-in-div-with-overflow-hidden)
 
 ### Acknowledgements
 
