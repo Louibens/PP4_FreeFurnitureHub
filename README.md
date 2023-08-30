@@ -240,7 +240,6 @@
 
     - Images were sourced from pexels.com or photos have been taken personally to be added to the website
 
-
 -   ### Colour
 
   - The below colour palette was chosen for a neutral and natural feel
@@ -285,9 +284,9 @@
 - Click the table to enlarge for better readability
 
     <details>
-    <summary>Manual Testing</summary>
+    <summary>Manual Testing Table</summary>
 
-    ![Manual Testing](documentation/testing/testing-ffh-v3%20(1).png)
+    ![Manual Testing](documentation/testing/testing-ffh-v4.png)
     </details>
 
  ### Automated Validator Testing
