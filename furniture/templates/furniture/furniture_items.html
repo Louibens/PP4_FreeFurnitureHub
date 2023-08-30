@@ -28,10 +28,10 @@
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
         {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn buttons mt-2">&laquo; PREV </a></li>
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn buttons mt-2 btn-outline-primary page-link-offers">&laquo; PREV </a></li>
         {% endif %}
         {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn buttons mt-2"> NEXT &raquo;</a></li>
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn buttons mt-2 btn-outline-primary page-link-offers"> NEXT &raquo;</a></li>
 
         {% endif %}
     </ul>

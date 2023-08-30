@@ -236,6 +236,10 @@ a.img-container:hover {
     border-color: var(--blue);
 }
 
+.page-link-offers {
+    padding: 0.375rem 5rem !important;
+}
+
 .logout {
     height: 100%;
     display: flex;
