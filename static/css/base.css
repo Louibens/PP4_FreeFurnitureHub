@@ -114,11 +114,8 @@ img.logo {
 }
 
 .user {
-    font-size: 16px;
-    padding-right: 1rem;
-    color: rgba(0,0,0,.55);
-    margin-bottom: 0;
-    color: var(--brown);
+    font-size: 14px;
+    color: var(--grey);
     margin: auto auto
 }
 
@@ -294,6 +291,7 @@ footer {
 .social-networks {
     width:50%; 
     text-align: center;
+    align-items: center;
 }
 
 .social-networks h3 {
@@ -303,6 +301,7 @@ footer {
 .social-networks ul {
     display: flex;
     justify-content: space-between;
+    padding-left: 0 !important;
 }
 
 .social-networks li {

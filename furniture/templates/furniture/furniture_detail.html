@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-
 {% block title %} {{furniture_post.title}}{% endblock %}
-
 {% block content %}
-
 {% load crispy_forms_tags %}
 
 <div class="furniture-info mt-3 p-1 mx-auto desc">
@@ -12,8 +9,7 @@
     </div>
     <div class="col-md-8 mb-4 mt-3 mx-auto px-4">
         <h1 class="text-center">{{ furniture_post.title }}</h1>
-        <p class="text-center">Posted by {{furniture_post.user.username.title}} on {{furniture_post.posted_date}}
-        </p>
+        <p class="text-center">Posted by {{furniture_post.user.username.title}} on {{furniture_post.posted_date}}</p>
         <hr>
         <p><strong>County: </strong>{{furniture_post.county.title}}</p>
         <p><strong>Town: </strong>{{furniture_post.town.title}}</p>
@@ -32,7 +28,6 @@
 {% endif %}
 
 <!-- Comment post box -->
-
 <div class="furniture-info col-md-8 mb-4 mt-3 mx-auto px-4">
     <div class="col-md-8 mb-4 mt-3 ">
         <h3>Comments:</h3>
@@ -58,9 +53,7 @@
         <div class="card-body">
 
             <!-- Create Comment box -->
-
             {% if user.is_authenticated %}
-
             <h3>Leave a comment:</h3>
             <p>Posting as: {{ user.username.title }}</p>
             <form method="post" style="margin-top: 1.3em;" class="comment-form">

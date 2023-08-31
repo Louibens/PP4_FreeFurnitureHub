@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-
 {% block title %}My Items{% endblock %}
-
 {% block content %}
-
 
 <h1 class="text-center p-2">
     Manage your furniture posts
@@ -13,7 +10,6 @@
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     <!-- display each of the users furniture posts -->
     <div class="container d-flex flex-row flex-wrap justify-content-center">
-
         {% for furniture in my_items %}
         <a href="{% url 'furniture_detail' furniture.id %}" class="img-container">
             <img src="{{furniture.image.url}}" alt="{{furniture.image_alt}}">

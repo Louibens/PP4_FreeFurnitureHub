@@ -3,11 +3,9 @@ from django.views.generic import (CreateView, ListView, DetailView,
 from django.shortcuts import render, get_object_or_404
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import (
-    UserPassesTestMixin, LoginRequiredMixin
-)
+    UserPassesTestMixin, LoginRequiredMixin)
 from django.db.models import Q
 from django.contrib import messages
-
 from .models import Furniture, Comment
 from .forms import FurnitureForm, CommentForm
 

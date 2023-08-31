@@ -195,6 +195,10 @@
 
 ## Future Features
 
+-   ### Reserved
+
+    - A "Reserved" tag that could be added to the image of a post would be helpful to indicate to users that the furniture owner has already agreed to have the item collected however the owner does not want to remove it from the site until it is gone. 
+
 -   ### Filtering
 
     - A filter could be applied on the Offers page to apply several search criteria. Currently the user can only search for one term at a time so for example, they can't currently search for couches in Dublin.

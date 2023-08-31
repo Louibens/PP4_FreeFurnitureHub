@@ -1,8 +1,7 @@
 from django.urls import path
 from .views import (
     Furniture, AddFurniture, FurnitureItems, FurnitureDetail,
-    DeleteFurniture, EditFurniture, MyItems
-)
+    DeleteFurniture, EditFurniture, MyItems)
 
 
 urlpatterns = [

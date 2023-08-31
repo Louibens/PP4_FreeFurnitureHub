@@ -70,7 +70,7 @@
             {% endif %}
             {% if user.is_authenticated %}
             <li class="user">
-              <i class="far fa-user"></i> {{ user.username.title|truncatechars:25 }}
+              <i class="far fa-user"></i> {{ user.username.title|truncatechars:15 }}
             </li>
             {% endif %}
           </ul>

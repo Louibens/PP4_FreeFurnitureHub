@@ -8,7 +8,6 @@
 </h1>
 <p class="text-center p-2">Search below or use the Search box above to help you find what you are looking for.</p>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
-
   {% for furniture in furniture_items %}
   <a href="{% url 'furniture_detail' furniture.id %}" class="furniture" aria-label="Click to view {{furniture.title}}">
     <div class="card m-3">
@@ -22,7 +21,6 @@
     </div>
   </a>
   {% endfor %}
-
 </div>
 {% if is_paginated %}
 <nav aria-label="Page navigation">
@@ -32,7 +30,6 @@
         {% endif %}
         {% if page_obj.has_next %}
         <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn buttons mt-2 btn-outline-primary page-link-offers"> NEXT &raquo;</a></li>
-
         {% endif %}
     </ul>
 </nav>
